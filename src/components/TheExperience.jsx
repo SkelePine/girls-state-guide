@@ -281,12 +281,10 @@ export default function TheExperience() {
                   </p>
                   <p
                     style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
-                    className="text-xl italic leading-relaxed"
+                    className="text-xl italic leading-relaxed opacity-70"
                   >
-                    "Red, White, Blue —<br />
-                    Nationalists coming through!<br />
-                    Stand up, get loud,<br />
-                    Nationalists make us proud!"
+                    Your party will teach you on Day 1.<br />
+                    <span className="text-sm not-italic">Every year the chant evolves — it&apos;s part of the tradition.</span>
                   </p>
                 </StaggerItem>
                 <StaggerItem
@@ -301,7 +299,7 @@ export default function TheExperience() {
                     className="text-xl italic leading-relaxed opacity-70"
                   >
                     Your party will teach you on Day 1.<br />
-                    <span className="text-sm not-italic">Every year the chant evolves — it's part of the tradition.</span>
+                    <span className="text-sm not-italic">Every year the chant evolves — it&apos;s part of the tradition.</span>
                   </p>
                 </StaggerItem>
               </StaggerContainer>
