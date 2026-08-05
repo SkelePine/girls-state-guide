@@ -117,9 +117,11 @@ export default function FilingProcess() {
             {forms.map((form, index) => (
               <StaggerItem key={form.number} className="card-hover rounded-xl overflow-hidden">
                 <button
+                  type="button"
                   onClick={() => setOpenItem(openItem === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 text-left"
+                  className="w-full flex items-center justify-between p-5 text-left border-none cursor-pointer"
                   style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}
+                  aria-expanded={openItem === index}
                 >
                   <div className="flex items-center gap-4">
                     <span className="text-xs font-bold px-2 py-1 rounded"
@@ -228,6 +230,7 @@ export default function FilingProcess() {
                 onClick={() => setExtraOpen(extraOpen === 'bank' ? null : 'bank')}
                 className="w-full flex items-center justify-between p-5 text-left border-none cursor-pointer"
                 style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}
+                aria-expanded={extraOpen === 'bank'}
               >
                 <span className="text-white font-medium text-sm">Bank Rules &amp; G$ Facts</span>
                 <span style={{ color: '#C9A84C' }}>{extraOpen === 'bank' ? '−' : '+'}</span>
@@ -307,6 +310,7 @@ export default function FilingProcess() {
                 onClick={() => setExtraOpen(extraOpen === 'writein' ? null : 'writein')}
                 className="w-full flex items-center justify-between p-5 text-left border-none cursor-pointer"
                 style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}
+                aria-expanded={extraOpen === 'writein'}
               >
                 <span className="text-white font-medium text-sm">Write-In Guide</span>
                 <span style={{ color: '#C9A84C' }}>{extraOpen === 'writein' ? '−' : '+'}</span>

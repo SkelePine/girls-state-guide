@@ -6,7 +6,6 @@ const groups = [
   {
     label: 'Getting In',
     links: [
-      { id: 'about', label: 'About' },
       { id: 'apply', label: 'How to Apply' },
       { id: 'what', label: 'What Is It' },
     ],
@@ -32,6 +31,7 @@ const groups = [
     label: 'The Experience',
     links: [
       { id: 'experience', label: 'The Experience' },
+      { id: 'delegates', label: 'From the Delegates' },
     ],
   },
   {
@@ -47,15 +47,10 @@ const groups = [
     ],
   },
   {
-    label: 'Delegates',
-    links: [
-      { id: 'delegates', label: 'From the Delegates' },
-    ],
-  },
-  {
     label: 'More',
     links: [
       { id: 'faq', label: 'FAQ' },
+      { id: 'about', label: 'About' },
     ],
   },
 ]

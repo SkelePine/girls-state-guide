@@ -1,16 +1,70 @@
-# React + Vite
+# CA Girls State Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Unofficial guide to ALA California Girls State — built for delegates (and parents) who want practical prep from selection through the week and beyond.
 
-Currently, two official plugins are available:
+**Not affiliated with the American Legion Auxiliary.** Always verify dates, campus, deadlines, and rules with your ALA unit and [cagirlsstate.org](https://www.cagirlsstate.org).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React + Vite
+- Tailwind CSS
+- Framer Motion
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local development
 
-## Expanding the Oxlint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Build for production:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Environment variables
+
+Copy `.env.example` to `.env` and fill in before launch:
+
+| Variable | Purpose |
+|----------|---------|
+| `VITE_SITE_URL` | Canonical site URL (used for sharing / OG) |
+| `VITE_CONTACT_EMAIL` | Mailto fallback for the footer story form |
+| `VITE_FORMSPREE_ENDPOINT` | Formspree form URL (`https://formspree.io/f/...`) |
+| `VITE_GOOGLE_FORM_URL` | Google Form link for alumna story submissions |
+
+Footer submit order: Formspree → mailto → Google Form.
+
+Author / session strings live in `src/siteConfig.js` (`verifiedYear`, byline, campus label).
+
+## Photos
+
+Drop files into `public/images/` (see `public/images/README.md`):
+
+- `campus.jpg` — after How It Works
+- `community.jpg` — before The Experience
+- `ceremony.jpg` — before What’s Next
+- `og-share.png` — social preview (aim ~1200×630, keep file size reasonable)
+
+## Deploy
+
+Any static host works (Vercel, Netlify, Cloudflare Pages, GitHub Pages):
+
+1. Set the env vars in the host dashboard
+2. Build command: `npm run build`
+3. Output directory: `dist`
+4. Update `VITE_SITE_URL` (and `index.html` OG tags if needed) to the live domain
+
+## Deep links
+
+Sections and tabs use hash routes, e.g.:
+
+- `#prepare/packing` — packing list
+- `#parents` — parent guide
+- `#experience/traditions` — traditions tab
+
+## Print
+
+The packing checklist supports print via the **Print List** button (CSS print stylesheet hides the rest of the page).

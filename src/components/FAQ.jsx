@@ -105,9 +105,11 @@ export default function FAQ() {
             <StaggerItem key={index} className="card-hover rounded-2xl overflow-hidden"
                  style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <button
+                type="button"
                 onClick={() => setOpenItem(openItem === index ? null : index)}
                 className="w-full flex items-center justify-between p-6 text-left transition-all"
                 style={{ backgroundColor: openItem === index ? '#1B2A4A' : 'white' }}
+                aria-expanded={openItem === index}
               >
                 <span className="font-medium text-sm pr-4"
                       style={{ color: openItem === index ? 'white' : '#1B2A4A' }}>

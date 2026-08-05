@@ -116,9 +116,11 @@ export default function WritingYourBill() {
               <StaggerItem key={index} className="card-hover rounded-2xl overflow-hidden"
                    style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
                 <button
+                  type="button"
                   onClick={() => setOpenSection(openSection === index ? -1 : index)}
                   className="w-full flex items-center justify-between p-5 text-left transition-all"
                   style={{ backgroundColor: openSection === index ? '#1B2A4A' : 'white' }}
+                  aria-expanded={openSection === index}
                 >
                   <div className="flex items-center gap-4">
                     <span className="text-xs font-bold px-2 py-1 rounded"

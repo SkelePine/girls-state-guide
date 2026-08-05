@@ -259,6 +259,50 @@ export default function RunningForOffice() {
             })}
           </StaggerContainer>
 
+          {/* What to do if you lose */}
+          <div
+            className="rounded-2xl p-7 sm:p-8 mb-8"
+            style={{
+              backgroundColor: 'white',
+              boxShadow: '0 4px 20px rgba(27,42,74,0.08)',
+              borderTop: '3px solid #C9A84C',
+            }}
+          >
+            <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#C9A84C' }}>
+              Mental Reset
+            </p>
+            <h3
+              style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
+              className="text-xl sm:text-2xl font-bold mb-4"
+            >
+              What to Do If You Lose
+            </h3>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: '#2D2D2D', opacity: 0.8 }}>
+              Most people lose at least one race. That doesn&apos;t mean you failed — it means you showed up. Here&apos;s how to reset and keep going.
+            </p>
+            <div className="space-y-3">
+              {[
+                { title: 'Feel it for a minute — then move', desc: 'It\'s okay to be disappointed. Take a breath. Then decide your next move before the day ends.' },
+                { title: 'Run again at the next level', desc: 'City → county → state. A loss at one level doesn\'t block you from the next. Many strong candidates win later in the week.' },
+                { title: 'Support someone else\'s campaign', desc: 'Help a friend with speeches, posters, or votes. Leadership isn\'t only about your name on the ballot.' },
+                { title: 'Apply for appointed roles', desc: 'Governor\'s Ceremonial Appointments, committee work, and city roles still need people who show up.' },
+                { title: 'Keep speaking and connecting', desc: 'Every speech makes the next one easier. The week rewards presence — titles optional.' },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex gap-3 p-3 rounded-xl"
+                  style={{ backgroundColor: 'rgba(27,42,74,0.04)' }}
+                >
+                  <span className="font-bold text-xs flex-shrink-0 mt-0.5" style={{ color: '#C9A84C' }}>→</span>
+                  <div>
+                    <p className="font-medium text-xs mb-0.5" style={{ color: '#1B2A4A' }}>{item.title}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: '#2D2D2D', opacity: 0.75 }}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div
             className="rounded-2xl p-8 sm:p-10 text-center relative overflow-hidden"
             style={{ backgroundColor: '#1B2A4A' }}
