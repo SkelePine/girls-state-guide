@@ -27,6 +27,7 @@ const navGroups = [
       { name: 'Run for Office', id: 'runforoffice' },
       { name: 'Filing and Currency', id: 'filing' },
       { name: 'Write Your Bill', id: 'bill' },
+      { name: 'Bar Exam', id: 'barexam' },
     ],
   },
   {
@@ -71,6 +72,7 @@ const NAV_SECTION_ORDER = [
   'runforoffice',
   'filing',
   'bill',
+  'barexam',
   'experience',
   'next',
   'parents',

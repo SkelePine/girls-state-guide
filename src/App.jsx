@@ -20,6 +20,7 @@ const PrepareToGo = lazy(() => import('./components/PrepareToGo'))
 const RunningForOffice = lazy(() => import('./components/RunningForOffice'))
 const FilingProcess = lazy(() => import('./components/FilingProcess'))
 const WritingYourBill = lazy(() => import('./components/WritingYourBill'))
+const BarExam = lazy(() => import('./components/BarExam'))
 const TheExperience = lazy(() => import('./components/TheExperience'))
 const WhatsNext = lazy(() => import('./components/WhatsNext'))
 const ForParents = lazy(() => import('./components/ForParents'))
@@ -128,6 +129,8 @@ function App() {
           <FilingProcess />
           <SectionDivider bg="#FAF7F2" />
           <WritingYourBill />
+          <SectionDivider bg="#FAF7F2" />
+          <BarExam />
         </Suspense>
 
         <PhotoBand imageKey="community" />

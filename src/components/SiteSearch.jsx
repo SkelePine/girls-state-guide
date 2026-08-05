@@ -18,6 +18,7 @@ const SEARCH_INDEX = [
   { title: 'Run for Office', section: 'runforoffice', keywords: 'campaign playbook tips' },
   { title: 'Filing & Currency', section: 'filing', keywords: 'forms bank g$ write-in signatures' },
   { title: 'Write Your Bill', section: 'bill', keywords: 'legislation google form deadline' },
+  { title: 'Bar Exam', section: 'barexam', keywords: 'mock bar law judicial attorney optional challenge' },
   { title: 'Making Connections', section: 'experience', tab: 'connections', keywords: 'social introvert friends' },
   { title: 'Traditions', section: 'experience', tab: 'traditions', keywords: 'flag promise chant ceremony' },
   { title: 'Girls Nation', section: 'next', tab: 'girlsnation', keywords: 'dc selection washington' },

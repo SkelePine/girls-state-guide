@@ -25,6 +25,7 @@ const groups = [
       { id: 'runforoffice', label: 'Run for Office' },
       { id: 'filing', label: 'Filing & Currency' },
       { id: 'bill', label: 'Write Your Bill' },
+      { id: 'barexam', label: 'Bar Exam' },
     ],
   },
   {
@@ -69,6 +70,7 @@ const SECTION_ORDER = [
   'runforoffice',
   'filing',
   'bill',
+  'barexam',
   'experience',
   'next',
   'parents',

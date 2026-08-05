@@ -15,6 +15,7 @@ const LINKS = [
   { label: 'Run for Office', id: 'runforoffice' },
   { label: 'Filing', id: 'filing' },
   { label: 'Your Bill', id: 'bill' },
+  { label: 'Bar Exam', id: 'barexam' },
   { label: 'Experience', id: 'experience' },
   { label: 'What\'s Next', id: 'next' },
   { label: 'Delegates', id: 'delegates' },
