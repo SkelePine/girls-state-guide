@@ -1,4 +1,5 @@
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function DormLife() {
     const provided = [
@@ -26,14 +27,14 @@ export default function DormLife() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               Where You'll Sleep
             </p>
             <h2 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               Dorm Life & Room Assignments
             </h2>
-            <p className="text-white opacity-60 max-w-xl mx-auto">
+            <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
               Dorming for the first time can feel like a lot. Here's exactly what to expect so nothing catches you off guard.
             </p>
           </div>
@@ -41,7 +42,7 @@ export default function DormLife() {
           {/* Campus Info Banner */}
           <div className="rounded-2xl p-6 mb-12 text-center"
                style={{ backgroundColor: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.4)' }}>
-            <p style={{ color: '#C9A84C' }} className="text-sm uppercase tracking-widest mb-2">2026 Campus</p>
+            <p style={{ color: '#C9A84C' }} className="text-xs uppercase tracking-widest mb-2">2026 Campus</p>
             <p style={{ color: 'white' }} className="text-xl font-bold mb-1">University of California, Riverside (UCR)</p>
             <p className="text-white opacity-60 text-sm">900 University Ave, Riverside, CA 92521</p>
             <p className="text-white opacity-40 text-xs mt-2">Note: Campus location may vary by year — confirm with your ALA unit</p>
@@ -51,13 +52,13 @@ export default function DormLife() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
   
             {/* What's Provided */}
-            <div className="rounded-2xl p-8" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
+            <div className="card-hover rounded-2xl p-8" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
               <h3 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}
                   className="text-xl font-bold mb-6">What's Provided</h3>
               <StaggerContainer className="space-y-4">
                 {provided.map((item) => (
                   <StaggerItem key={item.item} className="flex items-center gap-3">
-                    <span className="text-xl">{item.icon}</span>
+                    <IconBadge size="sm" variant="light">{item.icon}</IconBadge>
                     <span className="text-white opacity-75 text-sm">{item.item}</span>
                   </StaggerItem>
                 ))}
@@ -71,7 +72,7 @@ export default function DormLife() {
             </div>
   
             {/* Dining */}
-            <div className="rounded-2xl p-8" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
+            <div className="card-hover rounded-2xl p-8" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
               <h3 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}
                   className="text-xl font-bold mb-6">Dining</h3>
               <p className="text-white opacity-70 text-sm leading-relaxed mb-4">
@@ -92,9 +93,9 @@ export default function DormLife() {
           {/* Tips Grid */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {tips.map((tip) => (
-              <StaggerItem key={tip.title} className="p-5 rounded-xl"
+              <StaggerItem key={tip.title} className="card-hover p-5 rounded-xl"
                    style={{ backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <h4 style={{ color: '#C9A84C' }} className="font-semibold mb-2 text-sm">{tip.title}</h4>
+                <h4 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }} className="font-semibold mb-2 text-sm">{tip.title}</h4>
                 <p className="text-white opacity-60 text-xs leading-relaxed">{tip.desc}</p>
               </StaggerItem>
             ))}

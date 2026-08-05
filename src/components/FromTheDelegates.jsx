@@ -8,20 +8,20 @@ export default function FromTheDelegates() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               Real Experience
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               From the Delegates
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
               This guide was built by 2026 delegates. Here's what we actually experienced — the moments that surprised us, challenged us, and changed us.
             </p>
           </div>
   
           {/* Keynote Speech */}
-          <div className="rounded-2xl overflow-hidden mb-12"
+          <div className="card-hover rounded-2xl overflow-hidden mb-12"
                style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}>
             <div style={{ backgroundColor: '#1B2A4A' }} className="p-6">
               <p className="text-xs uppercase tracking-widest mb-1" style={{ color: '#C9A84C' }}>
@@ -66,7 +66,7 @@ export default function FromTheDelegates() {
   
           {/* Personal Reflections */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <StaggerItem className="p-6 rounded-2xl"
+            <StaggerItem className="card-hover p-6 rounded-2xl"
                  style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '4px solid #C9A84C' }}>
               <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
                 On Running for Multiple Offices
@@ -80,7 +80,7 @@ export default function FromTheDelegates() {
               </p>
             </StaggerItem>
 
-            <StaggerItem className="p-6 rounded-2xl"
+            <StaggerItem className="card-hover p-6 rounded-2xl"
                  style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '4px solid #1B2A4A' }}>
               <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
                 On Making Community
@@ -111,10 +111,10 @@ export default function FromTheDelegates() {
           {/* Share Your Story */}
           <div className="mt-12 text-center p-8 rounded-2xl"
                style={{ border: '2px dashed rgba(201,168,76,0.4)' }}>
-            <p style={{ color: '#C9A84C' }} className="text-sm uppercase tracking-widest mb-3">
+            <p style={{ color: '#C9A84C' }} className="text-xs uppercase tracking-widest mb-3">
               This Section Grows Over Time
             </p>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm max-w-md mx-auto">
+            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-md mx-auto">
               Are you a Girls State alumna with a story to share? This guide is built by delegates, for delegates. Reach out to add your experience.
             </p>
           </div>

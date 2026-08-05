@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function ParentGuide() {
   const [openItem, setOpenItem] = useState(null)
@@ -75,14 +76,14 @@ export default function ParentGuide() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
             For Families
           </p>
           <h2 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
               className="text-4xl md:text-5xl font-bold mb-4">
             Parent Guide
           </h2>
-          <p className="text-white opacity-60 max-w-xl mx-auto">
+          <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
             Your daughter just got selected for one of the most prestigious programs in California. Here's everything you need to know — from drop-off to pick-up and everything in between.
           </p>
         </div>
@@ -90,7 +91,7 @@ export default function ParentGuide() {
         {/* Honor Banner */}
         <div className="rounded-2xl p-6 mb-12 text-center"
              style={{ backgroundColor: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.4)' }}>
-          <p style={{ color: '#C9A84C' }} className="text-sm uppercase tracking-widest mb-2">A Note for Parents</p>
+          <p style={{ color: '#C9A84C' }} className="text-xs uppercase tracking-widest mb-2">A Note for Parents</p>
           <p style={{ color: 'white' }} className="text-lg leading-relaxed max-w-2xl mx-auto">
             Of 556,000 California high school juniors, your daughter is one of only 450 chosen. She was selected because of her leadership, academics, and character. She is ready for this.
           </p>
@@ -99,14 +100,14 @@ export default function ParentGuide() {
         {/* Accordion Sections */}
         <StaggerContainer className="space-y-3 mb-12">
           {sections.map((section, index) => (
-            <StaggerItem key={section.title} className="rounded-2xl overflow-hidden">
+            <StaggerItem key={section.title} className="card-hover rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpenItem(openItem === index ? null : index)}
                 className="w-full flex items-center justify-between p-6 text-left transition-all"
                 style={{ backgroundColor: openItem === index ? 'rgba(201,168,76,0.15)' : 'rgba(255,255,255,0.06)' }}
               >
                 <div className="flex items-center gap-4">
-                  <span className="text-2xl">{section.icon}</span>
+                  <IconBadge size="md" variant="light">{section.icon}</IconBadge>
                   <span className="font-semibold text-white">{section.title}</span>
                 </div>
                 <span style={{ color: '#C9A84C' }} className="text-xl flex-shrink-0 ml-4">
@@ -124,12 +125,12 @@ export default function ParentGuide() {
 
         {/* Packing Highlights */}
         <div className="rounded-2xl p-8 mb-12" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
-          <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
             Packing Highlights for Parents
           </p>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {packingHighlights.map((item) => (
-              <StaggerItem key={item.item} className="flex items-start gap-3 p-3 rounded-xl"
+              <StaggerItem key={item.item} className="card-hover flex items-start gap-3 p-3 rounded-xl"
                    style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
                 <span style={{ color: '#C9A84C' }} className="flex-shrink-0 mt-0.5">✓</span>
                 <div>
@@ -147,7 +148,7 @@ export default function ParentGuide() {
         {/* How to Support Her */}
         <div className="rounded-2xl p-8 mb-12"
              style={{ backgroundColor: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)' }}>
-          <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
             How to Support Her Before She Goes
           </p>
           <StaggerContainer className="space-y-3">
@@ -161,7 +162,7 @@ export default function ParentGuide() {
             ].map((tip) => (
               <StaggerItem key={tip} className="flex items-start gap-3">
                 <span style={{ color: '#C9A84C' }} className="flex-shrink-0 mt-0.5">→</span>
-                <p className="text-white opacity-70 text-sm">{tip}</p>
+                <p className="text-white opacity-70 text-sm leading-relaxed">{tip}</p>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -169,7 +170,7 @@ export default function ParentGuide() {
 
         {/* Key Links */}
         <div className="text-center">
-          <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
             Key Links for Parents
           </p>
           <StaggerContainer className="flex flex-wrap justify-center gap-4">

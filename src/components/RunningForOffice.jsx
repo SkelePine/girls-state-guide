@@ -9,7 +9,7 @@ export default function RunningForOffice() {
       number: '01',
       title: 'Choose Your Office',
       content: (
-        <div className="space-y-3 text-sm" style={{ color: '#2D2D2D', opacity: 0.75 }}>
+        <div className="space-y-3 text-sm leading-relaxed" style={{ color: '#2D2D2D', opacity: 0.75 }}>
           <p>Think about your strengths. City offices are great for everyone — lower stakes, immediate community. County and state offices are more competitive but absolutely worth trying.</p>
           <p>You can run at multiple levels throughout the week. Don't stop after one race.</p>
           <div className="grid grid-cols-2 gap-3 mt-4">
@@ -33,7 +33,7 @@ export default function RunningForOffice() {
       number: '02',
       title: 'Write Your Speech (60–90 seconds)',
       content: (
-        <div className="space-y-4 text-sm">
+        <div className="space-y-4 text-sm leading-relaxed">
           <p style={{ color: '#2D2D2D', opacity: 0.75 }}>The structure that works every time:</p>
           <div className="space-y-2">
             {[
@@ -68,7 +68,7 @@ export default function RunningForOffice() {
       number: '03',
       title: 'Make Your Campaign Poster',
       content: (
-        <div className="space-y-3 text-sm">
+        <div className="space-y-3 text-sm leading-relaxed">
           <div className="grid grid-cols-1 gap-2">
             {[
               { rule: 'Your name LARGE', desc: 'Readable from across a room' },
@@ -98,7 +98,7 @@ export default function RunningForOffice() {
       number: '04',
       title: 'Campaign — But Know the Rules',
       content: (
-        <div className="space-y-4 text-sm">
+        <div className="space-y-4 text-sm leading-relaxed">
           <div className="p-4 rounded-xl" style={{ backgroundColor: '#FEF3C7', border: '1px solid #FCD34D' }}>
             <p className="font-semibold text-xs mb-2" style={{ color: '#92400E' }}>⚠️ Important Rule</p>
             <p className="text-xs" style={{ color: '#92400E' }}>
@@ -127,7 +127,7 @@ export default function RunningForOffice() {
       number: '05',
       title: 'Delivery Tips',
       content: (
-        <div className="space-y-2 text-sm">
+        <div className="space-y-2 text-sm leading-relaxed">
           {[
             { tip: 'Practice out loud', desc: 'At least 5 times — not in your head, out loud.' },
             { tip: 'Speak slower', desc: 'Slower than you think you need to. Nerves speed you up.' },
@@ -157,14 +157,14 @@ export default function RunningForOffice() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
             Your Playbook
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
               className="text-4xl md:text-5xl font-bold mb-4">
             Running for Office
           </h2>
-          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
             On Day 1, you will give a speech. In front of everyone. Whether you're ready or not. Here's how to be ready — and why you should run for everything.
           </p>
         </div>
@@ -172,7 +172,7 @@ export default function RunningForOffice() {
         {/* Accordion Steps */}
         <StaggerContainer className="space-y-3 mb-12">
           {steps.map((step, index) => (
-            <StaggerItem key={index} className="rounded-2xl overflow-hidden"
+            <StaggerItem key={index} className="card-hover rounded-2xl overflow-hidden"
                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
               <button
                 onClick={() => setOpenStep(openStep === index ? -1 : index)}

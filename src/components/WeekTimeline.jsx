@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function WeekTimeline() {
   const [activeDay, setActiveDay] = useState(0)
@@ -129,14 +130,14 @@ export default function WeekTimeline() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
             Day by Day
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
               className="text-4xl md:text-5xl font-bold mb-4">
             The Week
           </h2>
-          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
             A general overview of what to expect each day. Your exact schedule is given upon arrival and may vary.
           </p>
         </div>
@@ -162,15 +163,15 @@ export default function WeekTimeline() {
 
         {/* Active Day Content */}
         <div className="max-w-3xl mx-auto">
-          <div className="rounded-2xl overflow-hidden"
+          <div className="card-hover rounded-2xl overflow-hidden"
                style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}>
 
             {/* Day Header */}
             <div style={{ backgroundColor: '#1B2A4A' }} className="p-8">
               <div className="flex items-center gap-4 mb-3">
-                <span className="text-4xl">{days[activeDay].icon}</span>
+                <IconBadge size="xl" variant="light">{days[activeDay].icon}</IconBadge>
                 <div>
-                  <p style={{ color: '#C9A84C' }} className="text-sm uppercase tracking-widest">
+                  <p style={{ color: '#C9A84C' }} className="text-xs uppercase tracking-widest">
                     {days[activeDay].label}
                   </p>
                   <h3 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
@@ -202,7 +203,7 @@ export default function WeekTimeline() {
                 <p className="text-xs uppercase tracking-widest mb-1" style={{ color: '#C9A84C' }}>
                   💡 Tip
                 </p>
-                <p className="text-sm" style={{ color: '#1B2A4A' }}>{days[activeDay].tip}</p>
+                <p className="text-sm leading-relaxed" style={{ color: '#1B2A4A' }}>{days[activeDay].tip}</p>
               </div>
             </div>
 

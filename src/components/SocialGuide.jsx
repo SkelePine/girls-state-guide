@@ -1,4 +1,5 @@
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function SocialGuide() {
     const tips = [
@@ -72,14 +73,14 @@ export default function SocialGuide() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               The Heart of It All
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               Making Connections
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-2xl mx-auto leading-relaxed">
+            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm max-w-2xl mx-auto leading-relaxed">
               Girls State is 450 strangers becoming a community in 6 days. You can be really in everyone's face, or you can be more laid back — but as long as you make those connections with friends, counselors, and everyone around you, it'll be so much more memorable. Make that community.
             </p>
           </div>
@@ -87,10 +88,10 @@ export default function SocialGuide() {
           {/* Tips Grid */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {tips.map((tip) => (
-              <StaggerItem key={tip.title} className="p-6 rounded-2xl"
+              <StaggerItem key={tip.title} className="card-hover p-6 rounded-2xl"
                    style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-                <div className="text-3xl mb-4">{tip.icon}</div>
-                <h3 style={{ color: '#1B2A4A' }} className="font-bold mb-2">{tip.title}</h3>
+                <IconBadge size="lg" variant="gold" className="mb-4">{tip.icon}</IconBadge>
+                <h3 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold mb-2">{tip.title}</h3>
                 <p style={{ color: '#2D2D2D', opacity: 0.7 }} className="text-sm leading-relaxed">{tip.desc}</p>
               </StaggerItem>
             ))}
@@ -98,10 +99,10 @@ export default function SocialGuide() {
   
           {/* Introvert Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
+            <div className="card-hover rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
               <h3 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}
                   className="text-2xl font-bold mb-2">For Introverts</h3>
-              <p className="text-white opacity-60 text-sm mb-6">
+              <p className="text-white opacity-60 text-sm leading-relaxed mb-6">
                 You don't have to be the loudest person in the room to make an impact.
               </p>
               <StaggerContainer className="space-y-3">
@@ -114,11 +115,11 @@ export default function SocialGuide() {
               </StaggerContainer>
             </div>
   
-            <div className="rounded-2xl p-8"
+            <div className="card-hover rounded-2xl p-8"
                  style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
               <h3 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                   className="text-2xl font-bold mb-2">Conversation Starters</h3>
-              <p style={{ color: '#2D2D2D', opacity: 0.6 }} className="text-sm mb-6">
+              <p style={{ color: '#2D2D2D', opacity: 0.6 }} className="text-sm leading-relaxed mb-6">
                 When you don't know what to say, start here.
               </p>
               <StaggerContainer className="space-y-3">
@@ -131,7 +132,7 @@ export default function SocialGuide() {
                   '"What do you want to do after high school?"',
                 ].map((starter) => (
                   <StaggerItem key={starter} className="flex items-start gap-3">
-                    <span style={{ color: '#C9A84C' }} className="flex-shrink-0 text-sm">💬</span>
+                    <IconBadge size="sm" variant="gold">💬</IconBadge>
                     <span style={{ color: '#1B2A4A' }} className="text-sm italic">{starter}</span>
                   </StaggerItem>
                 ))}
@@ -141,12 +142,12 @@ export default function SocialGuide() {
   
           {/* Quotes */}
           <div>
-            <p className="text-center text-sm uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
+            <p className="text-center text-xs uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
               From Real Delegates
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {quotes.map((quote) => (
-                <StaggerItem key={quote.source} className="p-6 rounded-2xl"
+                <StaggerItem key={quote.source} className="card-hover p-6 rounded-2xl"
                      style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderLeft: '3px solid #C9A84C' }}>
                   <p style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                      className="text-sm italic leading-relaxed mb-3">

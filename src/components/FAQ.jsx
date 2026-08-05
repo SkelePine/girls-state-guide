@@ -86,14 +86,14 @@ export default function FAQ() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
             Got Questions?
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
               className="text-4xl md:text-5xl font-bold mb-4">
             FAQ
           </h2>
-          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
             Everything you were wondering but didn't know who to ask.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function FAQ() {
         {/* Accordion */}
         <StaggerContainer className="space-y-3">
           {faqs.map((faq, index) => (
-            <StaggerItem key={index} className="rounded-2xl overflow-hidden"
+            <StaggerItem key={index} className="card-hover rounded-2xl overflow-hidden"
                  style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <button
                 onClick={() => setOpenItem(openItem === index ? null : index)}

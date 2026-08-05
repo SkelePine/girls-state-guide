@@ -49,14 +49,14 @@ export default function HowToApply() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               Step One
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               How to Apply
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
               Before you can experience Girls State, you have to get there. Here's exactly how the selection process works.
             </p>
           </div>
@@ -64,14 +64,14 @@ export default function HowToApply() {
           {/* Steps */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {steps.map((step) => (
-              <StaggerItem key={step.number} className="flex gap-6 p-6 rounded-xl"
+              <StaggerItem key={step.number} className="card-hover flex gap-6 p-6 rounded-xl"
                    style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
                 <div className="flex-shrink-0">
                   <span style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}
                         className="text-3xl font-bold">{step.number}</span>
                 </div>
                 <div>
-                  <h3 style={{ color: '#1B2A4A' }} className="font-semibold text-lg mb-2">{step.title}</h3>
+                  <h3 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="font-semibold text-lg mb-2">{step.title}</h3>
                   <p style={{ color: '#2D2D2D', opacity: 0.7 }} className="text-sm leading-relaxed">{step.content}</p>
                 </div>
               </StaggerItem>
@@ -79,8 +79,8 @@ export default function HowToApply() {
           </StaggerContainer>
   
           {/* Key Links */}
-          <div style={{ backgroundColor: '#1B2A4A' }} className="rounded-2xl p-8">
-            <p className="text-sm uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
+          <div style={{ backgroundColor: '#1B2A4A' }} className="card-hover rounded-2xl p-8">
+            <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
               Key Links
             </p>
             <StaggerContainer className="flex flex-wrap justify-center gap-4">

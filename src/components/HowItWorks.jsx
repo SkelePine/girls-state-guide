@@ -1,4 +1,5 @@
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function HowItWorks() {
     const counties = [
@@ -48,21 +49,21 @@ export default function HowItWorks() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               The Structure
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               How It All Works
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
               Girls State has its own government, its own parties, its own cities. It sounds complicated — and honestly, it kind of is at first. Here's the breakdown.
             </p>
           </div>
   
           {/* Three Level Pyramid */}
           <div className="mb-16">
-            <p className="text-center text-sm uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
+            <p className="text-center text-xs uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
               Three Levels of Government
             </p>
             <StaggerContainer className="flex flex-col gap-4 max-w-2xl mx-auto">
@@ -74,7 +75,7 @@ export default function HowItWorks() {
                 <StaggerItem key={tier.level} className={`${tier.width} mx-auto`}>
                   <div className="rounded-xl p-5 text-center"
                        style={{ backgroundColor: '#1B2A4A', opacity: tier.opacity }}>
-                    <p style={{ color: '#C9A84C' }} className="font-bold text-sm uppercase tracking-widest mb-1">
+                    <p style={{ color: '#C9A84C' }} className="font-bold text-xs uppercase tracking-widest mb-1">
                       {tier.level}
                     </p>
                     <p className="text-white text-xs opacity-70">{tier.desc}</p>
@@ -86,14 +87,14 @@ export default function HowItWorks() {
   
           {/* Four Counties */}
           <div className="mb-16">
-            <p className="text-center text-sm uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
+            <p className="text-center text-xs uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
               The Four Counties
             </p>
             <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {counties.map((county) => (
-                <StaggerItem key={county.name} className="rounded-xl p-6 text-center"
+                <StaggerItem key={county.name} className="card-hover rounded-xl p-6 text-center"
                      style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-                  <div className="text-3xl mb-3">{county.icon}</div>
+                  <IconBadge size="lg" variant="gold" className="mb-3 mx-auto">{county.icon}</IconBadge>
                   <p style={{ color: '#1B2A4A' }} className="font-bold text-sm mb-1">{county.name}</p>
                   <p style={{ color: '#2D2D2D', opacity: 0.6 }} className="text-xs">{county.type}</p>
                 </StaggerItem>
@@ -106,17 +107,17 @@ export default function HowItWorks() {
   
           {/* Two Parties */}
           <div className="mb-16">
-            <p className="text-center text-sm uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
+            <p className="text-center text-xs uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
               The Two Parties
             </p>
-            <p className="text-center text-sm mb-8" style={{ color: '#2D2D2D', opacity: 0.65 }}>
+            <p className="text-center text-sm leading-relaxed mb-8" style={{ color: '#2D2D2D', opacity: 0.65 }}>
               You don't choose your party — it's randomly assigned. And that's kind of the point.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {parties.map((party) => (
-                <StaggerItem key={party.name} className="rounded-xl p-6"
+                <StaggerItem key={party.name} className="card-hover rounded-xl p-6"
                      style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: `4px solid ${party.color}` }}>
-                  <h3 style={{ color: party.color }} className="font-bold text-lg mb-4">{party.name}</h3>
+                  <h3 style={{ color: party.color, fontFamily: '"Playfair Display", serif' }} className="font-bold text-lg mb-4">{party.name}</h3>
                   <ul className="space-y-2">
                     {party.points.map((point) => (
                       <li key={point} className="flex items-start gap-2 text-sm" style={{ color: '#2D2D2D', opacity: 0.75 }}>
@@ -129,7 +130,7 @@ export default function HowItWorks() {
             </StaggerContainer>
             <div className="mt-4 p-4 rounded-xl text-center"
                  style={{ backgroundColor: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)' }}>
-              <p className="text-sm" style={{ color: '#1B2A4A' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#1B2A4A' }}>
                 ⚠️ Neither party is tied to real-world political parties. Both are fictional and nonpartisan.
               </p>
             </div>
@@ -137,7 +138,7 @@ export default function HowItWorks() {
   
           {/* Paper Color System */}
           <div>
-            <p className="text-center text-sm uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
+            <p className="text-center text-xs uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
               The Paper Color System — You'll Use This Constantly
             </p>
             <StaggerContainer className="flex flex-wrap justify-center gap-4">

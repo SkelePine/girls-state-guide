@@ -65,14 +65,14 @@ export default function WritingYourBill() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
             Your Voice in Law
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
               className="text-4xl md:text-5xl font-bold mb-4">
             Writing Your Bill
           </h2>
-          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
             Your bill is your voice. It's the one place in the entire week where you get to say: this is what I care about, and here's what I'd do about it.
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function WritingYourBill() {
 
         {/* Topic Ideas */}
         <div className="mb-12">
-          <p className="text-sm uppercase tracking-widest mb-4 text-center" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-4 text-center" style={{ color: '#C9A84C' }}>
             Topic Ideas
           </p>
           <StaggerContainer className="flex flex-wrap justify-center gap-2">
@@ -108,12 +108,12 @@ export default function WritingYourBill() {
 
         {/* Bill Structure */}
         <div className="mb-12">
-          <p className="text-sm uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
             The Official Bill Structure
           </p>
           <StaggerContainer className="space-y-3">
             {billSections.map((item, index) => (
-              <StaggerItem key={index} className="rounded-2xl overflow-hidden"
+              <StaggerItem key={index} className="card-hover rounded-2xl overflow-hidden"
                    style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
                 <button
                   onClick={() => setOpenSection(openSection === index ? -1 : index)}
@@ -134,7 +134,7 @@ export default function WritingYourBill() {
                 </button>
                 {openSection === index && (
                   <div className="p-5" style={{ backgroundColor: 'white' }}>
-                    <p className="text-sm mb-3" style={{ color: '#2D2D2D', opacity: 0.75 }}>{item.desc}</p>
+                    <p className="text-sm leading-relaxed mb-3" style={{ color: '#2D2D2D', opacity: 0.75 }}>{item.desc}</p>
                     <div className="p-3 rounded-lg mb-3 font-mono text-xs"
                          style={{ backgroundColor: '#F8F9FA', color: '#1B2A4A', whiteSpace: 'pre-line' }}>
                       {item.example}
@@ -152,13 +152,13 @@ export default function WritingYourBill() {
         </div>
 
         {/* Bills Passed in 2026 */}
-        <div className="rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
-          <p className="text-sm uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
+        <div className="card-hover rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
+          <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
             Bills Passed & Signed into Law — 2026 Session
           </p>
           <StaggerContainer className="space-y-3">
             {passedBills.map((bill) => (
-              <StaggerItem key={bill.name} className="flex items-start gap-3 p-3 rounded-xl"
+              <StaggerItem key={bill.name} className="card-hover flex items-start gap-3 p-3 rounded-xl"
                    style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
                 <span style={{ color: '#C9A84C' }} className="mt-0.5">✓</span>
                 <div>

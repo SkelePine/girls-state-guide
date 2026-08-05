@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function FilingProcess() {
   const [openItem, setOpenItem] = useState(null)
@@ -36,28 +37,28 @@ export default function FilingProcess() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
             State Offices Only
           </p>
           <h2 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
               className="text-4xl md:text-5xl font-bold mb-4">
             The State Filing Process
           </h2>
-          <p className="text-white opacity-60 max-w-xl mx-auto">
+          <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
             Running for a state office is a whole process — and it starts before you even campaign. Here's exactly how it works.
           </p>
         </div>
 
         {/* People to Know */}
         <div className="mb-12">
-          <p className="text-sm uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
             People to Know
           </p>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {people.map((person) => (
-              <StaggerItem key={person.role} className="flex gap-4 p-4 rounded-xl"
+              <StaggerItem key={person.role} className="card-hover flex gap-4 p-4 rounded-xl"
                    style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
-                <span className="text-2xl">{person.hat}</span>
+                <IconBadge size="md" variant="light">{person.hat}</IconBadge>
                 <div>
                   <p style={{ color: '#C9A84C' }} className="font-semibold text-sm">{person.role}</p>
                   <p className="text-white opacity-60 text-xs mt-1">{person.desc}</p>
@@ -69,12 +70,12 @@ export default function FilingProcess() {
 
         {/* The Three Forms */}
         <div className="mb-12">
-          <p className="text-sm uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
             The Forms You Need
           </p>
           <StaggerContainer className="space-y-3">
             {forms.map((form, index) => (
-              <StaggerItem key={form.number} className="rounded-xl overflow-hidden">
+              <StaggerItem key={form.number} className="card-hover rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpenItem(openItem === index ? null : index)}
                   className="w-full flex items-center justify-between p-5 text-left"
@@ -91,7 +92,7 @@ export default function FilingProcess() {
                 </button>
                 {openItem === index && (
                   <div className="px-5 pb-5" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
-                    <p className="text-white opacity-65 text-sm pt-3">{form.desc}</p>
+                    <p className="text-white opacity-65 text-sm leading-relaxed pt-3">{form.desc}</p>
                   </div>
                 )}
               </StaggerItem>
@@ -102,7 +103,7 @@ export default function FilingProcess() {
         {/* Signature Rules */}
         <div className="mb-12 p-6 rounded-2xl"
              style={{ backgroundColor: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)' }}>
-          <p className="text-sm uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
             Signature Rules
           </p>
           <StaggerContainer className="space-y-2">
@@ -122,12 +123,12 @@ export default function FilingProcess() {
 
         {/* Filing Fees */}
         <div className="mb-12">
-          <p className="text-sm uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#C9A84C' }}>
             Filing Fees (Girls State Currency — G$)
           </p>
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {fees.map((item) => (
-              <StaggerItem key={item.office} className="p-4 rounded-xl text-center"
+              <StaggerItem key={item.office} className="card-hover p-4 rounded-xl text-center"
                    style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: `1px solid ${item.partisan ? 'rgba(201,168,76,0.3)' : 'rgba(255,255,255,0.1)'}` }}>
                 <p style={{ color: '#C9A84C' }} className="text-xl font-bold mb-1">{item.fee}</p>
                 <p className="text-white opacity-70 text-xs mb-2">{item.office}</p>
@@ -145,7 +146,7 @@ export default function FilingProcess() {
 
         {/* Tips */}
         <div className="p-6 rounded-2xl" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
-          <p className="text-sm uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
             Form Tips — Read Carefully
           </p>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-2">

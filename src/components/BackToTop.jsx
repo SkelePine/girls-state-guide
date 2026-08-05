@@ -22,11 +22,11 @@ export default function BackToTop() {
           type="button"
           onClick={scrollToTop}
           aria-label="Back to top"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full cursor-pointer border-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          className="fixed bottom-8 right-8 z-50 flex items-center justify-center rounded-full cursor-pointer border-none"
           style={{
             width: 44,
             height: 44,

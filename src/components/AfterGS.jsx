@@ -1,4 +1,5 @@
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function AfterGS() {
     const immediate = [
@@ -30,26 +31,26 @@ export default function AfterGS() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               The Week Is Over — Now What?
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               After Girls State
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
               The experience doesn't end when the bus pulls away. Here's how to make the most of everything that comes next.
             </p>
           </div>
   
           {/* Immediate Actions */}
           <div className="mb-12">
-            <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
               Right After — Do These First
             </p>
             <StaggerContainer className="space-y-3">
               {immediate.map((item) => (
-                <StaggerItem key={item.task} className="flex items-start gap-4 p-5 rounded-xl"
+                <StaggerItem key={item.task} className="card-hover flex items-start gap-4 p-5 rounded-xl"
                      style={{
                        backgroundColor: 'white',
                        boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
@@ -58,7 +59,7 @@ export default function AfterGS() {
                   <div className="flex-shrink-0 w-5 h-5 rounded border-2 mt-0.5"
                        style={{ borderColor: '#C9A84C' }}></div>
                   <div>
-                    <p style={{ color: '#1B2A4A' }} className="text-sm">{item.task}</p>
+                    <p style={{ color: '#1B2A4A' }} className="text-sm leading-relaxed">{item.task}</p>
                     {item.urgent && (
                       <span className="text-xs px-2 py-0.5 rounded-full mt-1 inline-block"
                             style={{ backgroundColor: 'rgba(201,168,76,0.15)', color: '#C9A84C' }}>
@@ -73,17 +74,17 @@ export default function AfterGS() {
   
           {/* Within the Month */}
           <div className="mb-12">
-            <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
               Within the Month
             </p>
             <StaggerContainer className="space-y-3">
               {withinMonth.map((item) => (
-                <StaggerItem key={item.task} className="flex items-start gap-4 p-5 rounded-xl"
+                <StaggerItem key={item.task} className="card-hover flex items-start gap-4 p-5 rounded-xl"
                      style={{ backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
                   <div className="flex-shrink-0 w-5 h-5 rounded border-2 mt-0.5"
                        style={{ borderColor: '#D1D5DB' }}></div>
                   <div className="flex-1 flex items-center justify-between gap-4">
-                    <p style={{ color: '#1B2A4A' }} className="text-sm">{item.task}</p>
+                    <p style={{ color: '#1B2A4A' }} className="text-sm leading-relaxed">{item.task}</p>
                     {item.link && (
                       <a href={item.link} target="_blank" rel="noopener noreferrer"
                          className="text-xs flex-shrink-0 px-3 py-1 rounded-full transition-opacity hover:opacity-75"
@@ -98,8 +99,8 @@ export default function AfterGS() {
           </div>
   
           {/* College App Box */}
-          <div className="rounded-2xl p-8 mb-12" style={{ backgroundColor: '#1B2A4A' }}>
-            <p className="text-sm uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
+          <div className="card-hover rounded-2xl p-8 mb-12" style={{ backgroundColor: '#1B2A4A' }}>
+            <p className="text-xs uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
               How to List It on College Applications
             </p>
             <div className="rounded-xl p-5" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
@@ -117,15 +118,15 @@ export default function AfterGS() {
   
           {/* Long Term */}
           <div>
-            <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
               Long Term — Pay It Forward
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {longTerm.map((item) => (
-                <StaggerItem key={item.title} className="p-6 rounded-2xl"
+                <StaggerItem key={item.title} className="card-hover p-6 rounded-2xl"
                      style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h4 style={{ color: '#1B2A4A' }} className="font-bold mb-2">{item.title}</h4>
+                  <IconBadge size="lg" variant="gold" className="mb-3">{item.icon}</IconBadge>
+                  <h4 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-base font-bold mb-2">{item.title}</h4>
                   <p style={{ color: '#2D2D2D', opacity: 0.7 }} className="text-sm leading-relaxed">{item.desc}</p>
                 </StaggerItem>
               ))}

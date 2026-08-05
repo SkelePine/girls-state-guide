@@ -670,14 +670,14 @@ export default function Positions() {
   const PositionCard = ({ pos, id, showFee = false }) => {
     const isExpanded = expandedCard === id
     return (
-      <div className="rounded-xl overflow-hidden transition-all duration-200"
+      <div className="card-hover rounded-xl overflow-hidden transition-all duration-200"
            style={{
              backgroundColor: isExpanded ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.06)',
              border: `1px solid ${isExpanded ? 'rgba(201,168,76,0.5)' : 'rgba(201,168,76,0.2)'}`,
            }}>
         <div className="p-5">
           <div className="flex justify-between items-start mb-1">
-            <h3 style={{ color: '#C9A84C' }} className="font-bold text-sm">{pos.title}</h3>
+            <h3 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }} className="font-bold text-sm">{pos.title}</h3>
             {showFee && pos.fee && (
               <span className="text-xs px-2 py-1 rounded-full text-white flex-shrink-0 ml-2"
                     style={{ backgroundColor: 'rgba(201,168,76,0.3)' }}>G$ {pos.fee}</span>
@@ -728,14 +728,14 @@ export default function Positions() {
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center mb-12">
-          <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
             Every Single Position
           </p>
           <h2 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
               className="text-4xl md:text-5xl font-bold mb-4">
             Positions & Offices
           </h2>
-          <p className="text-white opacity-60 max-w-xl mx-auto">
+          <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
             On Day 1, everyone runs for something. There are no spectators at Girls State. Click any position to learn more.
           </p>
         </div>
@@ -759,7 +759,7 @@ export default function Positions() {
 
         {activeTab === 'city' && (
           <div>
-            <p className="text-white opacity-60 text-sm mb-6 text-center">
+            <p className="text-white opacity-60 text-sm leading-relaxed mb-6 text-center">
               City offices are elected on Day 1. Your city (~30 people) is your home base all week. Requires 3–5 signatures.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -783,7 +783,7 @@ export default function Positions() {
 
         {activeTab === 'county' && (
           <div>
-            <p className="text-white opacity-60 text-sm mb-6 text-center">
+            <p className="text-white opacity-60 text-sm leading-relaxed mb-6 text-center">
               County elections happen mid-week. Requires 5–10 signatures. County officials represent a broader constituency.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -836,7 +836,7 @@ export default function Positions() {
 
         {activeTab === 'legislative' && (
           <div>
-            <p className="text-white opacity-60 text-sm mb-6 text-center">
+            <p className="text-white opacity-60 text-sm leading-relaxed mb-6 text-center">
               The Legislature has 16 Senators (1 per city) and 32 Assemblymembers (2 per city). Click any role to learn more.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -848,7 +848,7 @@ export default function Positions() {
             </StaggerContainer>
             <div className="mt-6 p-4 rounded-xl text-center"
                  style={{ backgroundColor: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)' }}>
-              <p className="text-sm" style={{ color: '#C9A84C' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#C9A84C' }}>
                 ★ You may hold only ONE elected office at Girls State, but as many appointed offices as you can responsibly handle.
               </p>
             </div>
@@ -857,10 +857,10 @@ export default function Positions() {
 
         {activeTab === 'governor' && (
           <div>
-            <p className="text-white opacity-60 text-sm mb-2 text-center">
+            <p className="text-white opacity-60 text-sm leading-relaxed mb-2 text-center">
               You don't have to win an election to hold a meaningful position.
             </p>
-            <p className="text-white opacity-60 text-sm mb-8 text-center max-w-2xl mx-auto">
+            <p className="text-white opacity-60 text-sm leading-relaxed mb-8 text-center max-w-2xl mx-auto">
               The newly elected Governor appoints delegates to the following departments, agencies, boards and commissions before the close of the session. Submit a <strong className="text-white">letter of interest</strong> by the deadline on the daily schedule.
             </p>
 
@@ -893,7 +893,7 @@ export default function Positions() {
                 <p className="text-sm font-medium mb-2" style={{ color: '#C9A84C' }}>
                   💡 How to Get a Ceremonial Appointment
                 </p>
-                <p className="text-white opacity-65 text-sm">
+                <p className="text-white opacity-65 text-sm leading-relaxed">
                   Write a letter of interest to the Governor expressing which department or board you'd like to serve on and why. Submit it by the deadline on the daily schedule. You do not need to win an election — this is open to all delegates.
                 </p>
               </div>

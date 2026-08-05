@@ -1,4 +1,5 @@
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function GirlsNation() {
     const whatHappens = [
@@ -26,14 +27,14 @@ export default function GirlsNation() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               The Next Level
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               Girls Nation
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="max-w-xl mx-auto">
+            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
               Two delegates from California are selected to represent the state at ALA Girls Nation in Washington, D.C. in July. It's the national version of Girls State — and it's announced at the Closing Ceremony.
             </p>
           </div>
@@ -42,13 +43,13 @@ export default function GirlsNation() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
   
             {/* What Is It */}
-            <div className="rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
+            <div className="card-hover rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
               <h3 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}
                   className="text-2xl font-bold mb-6">What Happens There</h3>
               <StaggerContainer className="space-y-4">
                 {whatHappens.map((item) => (
                   <StaggerItem key={item.text} className="flex items-start gap-3">
-                    <span className="text-xl flex-shrink-0">{item.icon}</span>
+                    <IconBadge size="sm" variant="light">{item.icon}</IconBadge>
                     <span className="text-white opacity-70 text-sm">{item.text}</span>
                   </StaggerItem>
                 ))}
@@ -56,7 +57,7 @@ export default function GirlsNation() {
             </div>
   
             {/* Selection */}
-            <div className="rounded-2xl p-8"
+            <div className="card-hover rounded-2xl p-8"
                  style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
               <h3 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
                   className="text-2xl font-bold mb-4">How Selection Works</h3>
@@ -68,7 +69,7 @@ export default function GirlsNation() {
               </p>
               <div className="p-4 rounded-xl"
                    style={{ backgroundColor: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.3)' }}>
-                <p className="text-sm" style={{ color: '#1B2A4A' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#1B2A4A' }}>
                   💡 The delegates selected for Girls Nation are not always the ones who won the most elections. They're the ones who showed the most genuine leadership, engagement, and character throughout the week.
                 </p>
               </div>
@@ -77,16 +78,16 @@ export default function GirlsNation() {
   
           {/* How to Stand Out */}
           <div className="mb-16">
-            <p className="text-center text-sm uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
+            <p className="text-center text-xs uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
               How to Position Yourself
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {howToStandOut.map((item) => (
-                <StaggerItem key={item.step} className="p-6 rounded-2xl"
+                <StaggerItem key={item.step} className="card-hover p-6 rounded-2xl"
                      style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
                   <p style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}
                      className="text-3xl font-bold mb-3">{item.step}</p>
-                  <h4 style={{ color: '#1B2A4A' }} className="font-bold mb-2">{item.title}</h4>
+                  <h4 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-base font-bold mb-2">{item.title}</h4>
                   <p style={{ color: '#2D2D2D', opacity: 0.7 }} className="text-sm leading-relaxed">{item.desc}</p>
                 </StaggerItem>
               ))}
@@ -94,8 +95,8 @@ export default function GirlsNation() {
           </div>
   
           {/* On Your College App */}
-          <div className="rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
-            <p className="text-sm uppercase tracking-widest mb-4 text-center" style={{ color: '#C9A84C' }}>
+          <div className="card-hover rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
+            <p className="text-xs uppercase tracking-widest mb-4 text-center" style={{ color: '#C9A84C' }}>
               On Your College Application
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
 
 const stats = [
@@ -59,7 +60,58 @@ function GoldDivider({ className, delay = 0 }) {
   )
 }
 
+function ScrollIndicator({ visible }) {
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          aria-hidden="true"
+        >
+          <motion.svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            animate={{ y: [0, 8, 0] }}
+            transition={{
+              duration: 1.6,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          >
+            <path
+              d="M6 9L12 15L18 9"
+              stroke="#C9A84C"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </motion.svg>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
 export default function Hero() {
+  const [showScrollHint, setShowScrollHint] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setShowScrollHint(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <FadeInSection>
       <section className="hero-gradient relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-20 overflow-hidden">
@@ -68,7 +120,7 @@ export default function Hero() {
         <GoldDivider className="mb-8 relative z-10" delay={0.15} />
 
         {/* Eyebrow text */}
-        <p className="relative z-10 text-sm uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
+        <p className="relative z-10 text-xs uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
           ALA California Girls State · 2026 & Beyond
         </p>
 
@@ -141,6 +193,9 @@ export default function Hero() {
 
         {/* Bottom decorative line */}
         <GoldDivider className="mt-8 relative z-10" delay={0.45} />
+
+        {/* Scroll indicator */}
+        <ScrollIndicator visible={showScrollHint} />
 
       </section>
     </FadeInSection>

@@ -1,4 +1,5 @@
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import IconBadge from './IconBadge'
 
 export default function Traditions() {
     const ceremonies = [
@@ -65,21 +66,21 @@ export default function Traditions() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               The Culture
             </p>
             <h2 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
                 className="text-4xl md:text-5xl font-bold mb-4">
               Traditions & Ceremonies
             </h2>
-            <p className="text-white opacity-60 max-w-xl mx-auto">
+            <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
               Girls State has a culture all its own. Songs, chants, ceremonies, and moments you won't find anywhere else.
             </p>
           </div>
   
           {/* Party Chants */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <StaggerItem className="rounded-2xl p-8 text-center"
+            <StaggerItem className="card-hover rounded-2xl p-8 text-center"
                  style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '2px solid rgba(201,168,76,0.4)' }}>
               <p className="text-xs uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
                 🔵 Nationalist Party Chant
@@ -92,7 +93,7 @@ export default function Traditions() {
                 Nationalists make us proud!"
               </p>
             </StaggerItem>
-            <StaggerItem className="rounded-2xl p-8 text-center"
+            <StaggerItem className="card-hover rounded-2xl p-8 text-center"
                  style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '2px solid rgba(255,255,255,0.15)' }}>
               <p className="text-xs uppercase tracking-widest mb-4" style={{ color: '#C9A84C' }}>
                 🔴 Federalist Party Chant
@@ -108,10 +109,10 @@ export default function Traditions() {
           {/* Ceremonies Grid */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
             {ceremonies.map((item) => (
-              <StaggerItem key={item.title} className="p-6 rounded-2xl"
+              <StaggerItem key={item.title} className="card-hover p-6 rounded-2xl"
                    style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <h3 style={{ color: '#C9A84C' }} className="font-bold mb-1">{item.title}</h3>
+                <IconBadge size="lg" variant="gold" className="mb-3">{item.icon}</IconBadge>
+                <h3 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }} className="text-lg font-bold mb-1">{item.title}</h3>
                 <p className="text-xs mb-3" style={{ color: '#C9A84C', opacity: 0.6 }}>{item.time}</p>
                 <p className="text-white opacity-65 text-sm leading-relaxed">{item.desc}</p>
               </StaggerItem>
@@ -119,7 +120,7 @@ export default function Traditions() {
           </StaggerContainer>
 
           {/* Girls State Promise */}
-          <div className="rounded-2xl p-10 text-center"
+          <div className="card-hover rounded-2xl p-10 text-center"
                style={{ backgroundColor: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.4)' }}>
             <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
               The Girls State Promise — Recited at the Closing Ceremony
