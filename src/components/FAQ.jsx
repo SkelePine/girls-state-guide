@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
+import { siteConfig } from '../siteConfig'
 
 export default function FAQ() {
   const [openItem, setOpenItem] = useState(null)
@@ -75,13 +76,13 @@ export default function FAQ() {
     },
     {
       q: 'Is this guide official?',
-      a: 'No — this is an unofficial guide created by 2026 delegates to help future delegates prepare. Always verify current information with your ALA unit and the official Girls State website at cagirlsstate.org. Program details may change year to year.',
+      a: `No — this is an unofficial guide built by ${siteConfig.author}, ${siteConfig.authorRole}, to help future delegates prepare. Always verify current information with your ALA unit and the official Girls State website at cagirlsstate.org. Program details may change year to year.`,
     },
   ]
 
   return (
     <FadeInSection>
-    <section id="faq" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-6">
+    <section id="faq" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
 
         {/* Header */}
@@ -90,7 +91,7 @@ export default function FAQ() {
             Got Questions?
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
-              className="text-4xl md:text-5xl font-bold mb-4">
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             FAQ
           </h2>
           <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
@@ -132,7 +133,7 @@ export default function FAQ() {
         <div className="mt-12 p-6 rounded-2xl text-center"
              style={{ backgroundColor: 'rgba(27,42,74,0.05)', border: '1px solid rgba(27,42,74,0.1)' }}>
           <p style={{ color: '#1B2A4A', opacity: 0.6 }} className="text-xs leading-relaxed">
-            This is an unofficial guide created by 2026 delegates. Not affiliated with the American Legion Auxiliary. Always verify current information with your ALA unit and the official website at{' '}
+            This is an unofficial guide built by {siteConfig.author}, {siteConfig.authorRole}. Not affiliated with the American Legion Auxiliary. Always verify current information with your ALA unit and the official website at{' '}
             <a href="https://www.cagirlsstate.org" target="_blank" rel="noopener noreferrer"
                style={{ color: '#C9A84C' }} className="underline">
               cagirlsstate.org

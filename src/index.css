@@ -23,6 +23,26 @@ body {
   }
 }
 
+@keyframes hero-stat-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes hero-sparkle-twinkle {
+  0%, 100% { opacity: 0.35; transform: scale(0.9) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.15) rotate(12deg); }
+}
+
+@keyframes hero-divider-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes hero-chevron-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(7px); }
+}
+
 .hero-gradient {
   background-color: #152238;
   isolation: isolate;
@@ -54,6 +74,27 @@ body {
   animation: hero-radial-drift 22s ease-in-out infinite;
 }
 
+.hero-stat-float {
+  display: inline-block;
+  animation: hero-stat-bob 3.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-sparkle {
+  animation: hero-sparkle-twinkle 3.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.hero-gold-divider {
+  transform-origin: center;
+  animation: hero-divider-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-scroll-chevron {
+  display: block;
+  animation: hero-chevron-bounce 1.6s ease-in-out infinite;
+}
+
 .hero-cta {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -65,12 +106,52 @@ body {
 
 /* Individual `translate` avoids clashing with framer-motion `transform` */
 .card-hover {
-  transition: translate 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .card-hover:hover {
   translate: 0 -4px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14) !important;
+}
+
+/* Keyboard focus — visible gold ring */
+:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 3px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Slightly stronger muted text helpers (prefer these over opacity-40/50 on body copy) */
+.text-muted-on-navy {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.text-muted-on-cream {
+  color: rgba(45, 45, 45, 0.78);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Soften large background motion only — keep subtle sparkles/stat bob for polish */
+  .hero-gradient::before {
+    animation: none !important;
+  }
+
+  .hero-scroll-chevron {
+    animation: none !important;
+  }
+
+  .hero-gold-divider {
+    animation: none !important;
+    transform: scaleX(1);
+  }
 }
 
 /* Screen: hide print-only blocks */
@@ -99,22 +180,22 @@ body {
     visibility: hidden !important;
   }
 
-  #packing,
-  #packing * {
+  #packing-print,
+  #packing-print * {
     visibility: visible !important;
   }
 
-  #packing {
+  #packing-print {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     background: white !important;
-    padding: 0 !important;
+    padding: 0.4in !important;
     margin: 0 !important;
   }
 
-  #packing .max-w-4xl {
+  #packing-print .max-w-4xl {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -207,19 +288,19 @@ body {
   }
 
   /* Keep leave-at-home compact at bottom */
-  #packing .mt-8 {
+  #packing-print .mt-8 {
     margin-top: 10pt !important;
     padding: 6pt 8pt !important;
     break-inside: avoid;
   }
 
-  #packing .mt-8 p {
+  #packing-print .mt-8 p {
     font-size: 8pt !important;
     margin-bottom: 3pt !important;
   }
 
-  #packing .mt-8 .print-only,
-  #packing .mt-8 span {
+  #packing-print .mt-8 .print-only,
+  #packing-print .mt-8 span {
     font-size: 7pt !important;
   }
 }

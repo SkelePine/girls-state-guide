@@ -125,7 +125,7 @@ export default function WeekTimeline() {
 
   return (
     <FadeInSection>
-    <section id="week" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-6">
+    <section id="week" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -134,7 +134,7 @@ export default function WeekTimeline() {
             Day by Day
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
-              className="text-4xl md:text-5xl font-bold mb-4">
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             The Week
           </h2>
           <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">

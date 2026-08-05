@@ -60,7 +60,7 @@ export default function WritingYourBill() {
 
   return (
     <FadeInSection>
-    <section id="bill" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-6">
+    <section id="bill" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
@@ -69,7 +69,7 @@ export default function WritingYourBill() {
             Your Voice in Law
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
-              className="text-4xl md:text-5xl font-bold mb-4">
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Writing Your Bill
           </h2>
           <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">

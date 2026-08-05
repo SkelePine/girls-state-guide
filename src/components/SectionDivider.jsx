@@ -1,32 +1,28 @@
-export default function SectionDivider() {
+export default function SectionDivider({ bg = '#FAF7F2' }) {
   return (
     <div
-      className="flex items-center justify-center px-6"
-      style={{ backgroundColor: 'transparent' }}
+      className="flex items-center justify-center"
+      style={{ height: 56, backgroundColor: bg }}
       aria-hidden="true"
     >
-      <div className="flex items-center w-full max-w-xs gap-3">
+      <div className="relative flex items-center justify-center w-full max-w-xs px-4">
         <div
-          className="flex-1 h-px"
+          className="absolute left-4 right-4 h-px"
           style={{ backgroundColor: '#C9A84C', opacity: 0.55 }}
         />
         <svg
-          width="10"
-          height="10"
-          viewBox="0 0 10 10"
+          className="relative z-10 flex-shrink-0"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
           fill="none"
-          className="flex-shrink-0"
+          style={{ backgroundColor: bg }}
         >
           <path
-            d="M5 0L6.2 3.8L10 5L6.2 6.2L5 10L3.8 6.2L0 5L3.8 3.8L5 0Z"
+            d="M12 2L13.8 9.2L21 11L13.8 12.8L12 20L10.2 12.8L3 11L10.2 9.2L12 2Z"
             fill="#C9A84C"
-            opacity="0.85"
           />
         </svg>
-        <div
-          className="flex-1 h-px"
-          style={{ backgroundColor: '#C9A84C', opacity: 0.55 }}
-        />
       </div>
     </div>
   )

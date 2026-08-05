@@ -724,7 +724,7 @@ export default function Positions() {
 
   return (
     <FadeInSection>
-    <section id="office" style={{ backgroundColor: '#1B2A4A' }} className="py-24 px-6">
+    <section id="office" style={{ backgroundColor: '#1B2A4A' }} className="py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center mb-12">
@@ -732,7 +732,7 @@ export default function Positions() {
             Every Single Position
           </p>
           <h2 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
-              className="text-4xl md:text-5xl font-bold mb-4">
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Positions & Offices
           </h2>
           <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
@@ -740,13 +740,14 @@ export default function Positions() {
           </p>
         </div>
 
-        <StaggerContainer className="flex flex-wrap justify-center gap-3 mb-12">
+        <StaggerContainer className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3 mb-12 overflow-x-auto pb-1 -mx-1 px-1" style={{ scrollbarWidth: 'none' }}>
           {tabs.map((tab) => (
-            <StaggerItem key={tab.id}>
+            <StaggerItem key={tab.id} className="flex-shrink-0">
               <button
                 onClick={() => { setActiveTab(tab.id); setExpandedCard(null) }}
-                className="px-6 py-3 rounded-full text-sm font-medium transition-all duration-200"
+                className="px-5 sm:px-6 rounded-full text-sm font-medium transition-all duration-200 border-none cursor-pointer"
                 style={{
+                  minHeight: 44,
                   backgroundColor: activeTab === tab.id ? '#C9A84C' : 'rgba(255,255,255,0.1)',
                   color: activeTab === tab.id ? '#1B2A4A' : 'white',
                 }}

@@ -44,7 +44,7 @@ export default function HowItWorks() {
   
     return (
       <FadeInSection>
-      <section id="structure" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-6">
+      <section id="structure" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
   
           {/* Header */}
@@ -53,7 +53,7 @@ export default function HowItWorks() {
               The Structure
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
-                className="text-4xl md:text-5xl font-bold mb-4">
+                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               How It All Works
             </h2>
             <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
@@ -90,7 +90,7 @@ export default function HowItWorks() {
             <p className="text-center text-xs uppercase tracking-widest mb-8" style={{ color: '#C9A84C' }}>
               The Four Counties
             </p>
-            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {counties.map((county) => (
                 <StaggerItem key={county.name} className="card-hover rounded-xl p-6 text-center"
                      style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
