@@ -74,7 +74,7 @@ const packingHighlights = [
   { item: 'Bedding (twin XL)', note: 'Confirm with your unit if linens are provided' },
   { item: 'Shower caddy and shower shoes', note: 'Communal bathrooms' },
   { item: 'Cash $20–40', note: 'For incidentals' },
-  { item: 'Campaign supplies', note: 'Poster board, markers, blue tape, printed photos' },
+  { item: 'Index cards and Sharpies', note: 'Useful for speech notes and labeling' },
 ]
 
 export default function ForParents() {

@@ -4,12 +4,12 @@ import IconBadge from './IconBadge'
 import SectionTabs from './SectionTabs'
 
 const tabs = [
-  { id: 'girlsnation', label: 'Girls Nation' },
   { id: 'after', label: 'After Girls State' },
+  { id: 'girlsnation', label: 'Girls Nation' },
 ]
 
 export default function WhatsNext() {
-  const [activeTab, setActiveTab] = useHashTab('next', 'girlsnation', ['girlsnation', 'after'])
+  const [activeTab, setActiveTab] = useHashTab('next', 'after', ['after', 'girlsnation'])
 
   const whatHappens = [
     { icon: '🏛️', text: 'Nationalist and Federalist parties — same structure as Girls State' },
@@ -31,7 +31,6 @@ export default function WhatsNext() {
 
   const immediate = [
     { task: 'Connect with new friends on Instagram/LinkedIn before you lose momentum', urgent: true },
-    { task: 'Apply for the Samsung Scholarship — must be submitted before or on Day 1 of your session. Do this BEFORE you go.', urgent: true },
     { task: 'Write down your memories while they\'re fresh — you\'ll want them later', urgent: false },
     { task: 'Share your experience with your school (you\'re encouraged to present back)', urgent: false },
   ]

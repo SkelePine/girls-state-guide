@@ -53,7 +53,7 @@ const packingCategories = [
       'Toothbrush, toothpaste, floss',
       'Mini first aid kit (Advil, Pepto, Band-Aids)',
       'Any prescription medications',
-      'Sunscreen — Riverside sun is intense',
+      'Sunscreen — California sun is intense',
     ],
   },
   {
@@ -72,24 +72,13 @@ const packingCategories = [
     ],
   },
   {
-    id: 'campaign',
-    label: '📣 Campaign Supplies',
-    items: [
-      'Poster board (2–3 sheets)',
-      'Markers — thick + thin, multiple colors',
-      'Glitter, stickers, washi tape',
-      'Printed photos of yourself',
-      'BLUE TAPE ONLY — only approved tape for hanging posters',
-      'Index cards for speech notes',
-      'Sharpies in multiple colors',
-    ],
-  },
-  {
     id: 'school',
     label: '📚 School Supplies',
     items: [
       'Notebook + pens — write down your memories every night',
       'Highlighters',
+      'Index cards',
+      'Sharpies',
       'Laptop or tablet — useful for bill writing',
       'Printed copy of your submitted bill',
     ],
@@ -101,7 +90,6 @@ const packingCategories = [
       'Phone + charger',
       'Portable battery pack — essential for 6AM–10:30PM days',
       'Headphones',
-      'Lanyard for your badge',
       'Small backpack or tote for daily sessions',
       'Cash $20–40 for incidentals',
       'Snacks — granola bars, trail mix, crackers',

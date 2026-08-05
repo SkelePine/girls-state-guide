@@ -73,9 +73,25 @@ export default function RunningForOffice() {
     },
     {
       number: '03',
-      title: 'Make Your Campaign Poster',
+      title: 'Make Your Campaign Poster (State Only)',
       content: (
         <div className="space-y-3 text-sm leading-relaxed">
+          <div
+            className="p-4 rounded-xl"
+            style={{ backgroundColor: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.35)' }}
+          >
+            <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#C9A84C' }}>
+              Important Distinction
+            </p>
+            <p className="text-xs leading-relaxed" style={{ color: '#1B2A4A' }}>
+              Campaign posters are for <strong>state offices only</strong>. If you&apos;re running for city or county,
+              you do <strong>not</strong> make a poster — focus on speeches, introductions, and relationships.
+              Posters become part of the campaign once you&apos;re running at the state level.
+            </p>
+          </div>
+          <p className="text-xs" style={{ color: '#2D2D2D', opacity: 0.75 }}>
+            If you&apos;re running for a state office, here&apos;s what makes a strong poster:
+          </p>
           <div className="grid grid-cols-1 gap-2">
             {[
               { rule: 'Your name LARGE', desc: 'Readable from across a room' },
@@ -99,7 +115,7 @@ export default function RunningForOffice() {
             ))}
           </div>
           <p className="text-xs pt-1" style={{ color: '#2D2D2D', opacity: 0.7 }}>
-            Free tool: <strong>Canva.com</strong> has free campaign poster templates. Use them.
+            Free tool: <strong>Canva.com</strong> has free campaign poster templates. Use them for state races.
           </p>
         </div>
       ),
@@ -109,28 +125,65 @@ export default function RunningForOffice() {
       title: 'Campaign — But Know the Rules',
       content: (
         <div className="space-y-4 text-sm leading-relaxed">
+          <div>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+              By Level — Posters &amp; Fundraising
+            </p>
+            <div className="grid grid-cols-1 gap-2">
+              {[
+                {
+                  level: 'City',
+                  rules: 'No campaign poster. You cannot fundraise. Focus on speeches, introductions, and earning votes in your city.',
+                },
+                {
+                  level: 'County',
+                  rules: 'No campaign poster. Fundraising is optional — you may fundraise if you choose, but it is not required.',
+                },
+                {
+                  level: 'State',
+                  rules: 'Campaign poster required. Fundraising is required to cover filing fees. This is the level where posters + G$ fundraising are part of the process.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.level}
+                  className="p-3 rounded-xl"
+                  style={{ backgroundColor: 'rgba(27,42,74,0.04)', borderLeft: '3px solid #C9A84C' }}
+                >
+                  <p className="font-semibold text-xs mb-1" style={{ color: '#1B2A4A' }}>{item.level}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: '#2D2D2D', opacity: 0.8 }}>{item.rules}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="p-4 rounded-xl" style={{ backgroundColor: '#FEF3C7', border: '1px solid #FCD34D' }}>
-            <p className="font-semibold text-xs mb-2" style={{ color: '#92400E' }}>Important Rule</p>
+            <p className="font-semibold text-xs mb-2" style={{ color: '#92400E' }}>Important Rule (When You Fundraise)</p>
             <p className="text-xs" style={{ color: '#92400E' }}>
               When you are fundraising, you are NOT campaigning. You can ONLY start campaigning AFTER you are announced as a qualified candidate.
             </p>
           </div>
-          <p style={{ color: '#2D2D2D', opacity: 0.85 }}>
-            Fundraising script: <em>&quot;I am fundraising to file for a state office, are you willing to contribute a donation?&quot;</em> — do NOT ask for votes during fundraising.
-          </p>
-          <div className="space-y-2">
-            {[
-              'Max $25 from any single contributor',
-              'Track every contributor\'s name, city, and amount (required for Form #12)',
-              'Must maintain at least $1 in your account at all times',
-              'Introduce yourself to everyone — especially in your city and party',
-              'Ask directly: "I\'m running for [X] — I\'d love your support"',
-              'Support other candidates too — this is collaborative, not cutthroat',
-            ].map((rule) => (
-              <div key={rule} className="flex items-start gap-2 text-xs" style={{ color: '#2D2D2D', opacity: 0.8 }}>
-                <span style={{ color: '#C9A84C' }}>→</span> {rule}
-              </div>
-            ))}
+
+          <div>
+            <p className="text-xs font-semibold mb-2" style={{ color: '#1B2A4A' }}>
+              If you&apos;re fundraising (state required · county optional)
+            </p>
+            <p className="text-xs mb-3" style={{ color: '#2D2D2D', opacity: 0.85 }}>
+              Script: <em>&quot;I am fundraising to file for a state office, are you willing to contribute a donation?&quot;</em> — do NOT ask for votes during fundraising.
+            </p>
+            <div className="space-y-2">
+              {[
+                'Max $25 from any single contributor',
+                'Track every contributor\'s name, city, and amount (required for Form #12)',
+                'Must maintain at least $1 in your account at all times',
+                'Introduce yourself to everyone — especially in your city and party',
+                'Ask directly: "I\'m running for [X] — I\'d love your support"',
+                'Support other candidates too — this is collaborative, not cutthroat',
+              ].map((rule) => (
+                <div key={rule} className="flex items-start gap-2 text-xs" style={{ color: '#2D2D2D', opacity: 0.8 }}>
+                  <span style={{ color: '#C9A84C' }}>→</span> {rule}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ),
