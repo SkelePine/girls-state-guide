@@ -36,7 +36,7 @@ export default function AboutThisSite() {
             >
               About This Guide
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
+            <p className="text-muted-on-cream text-base leading-relaxed max-w-xl mx-auto">
               Everything the acceptance letter didn&apos;t cover — organized so you can find what you need fast.
             </p>
             <p style={{ color: '#2D2D2D', opacity: 0.55 }} className="text-xs mt-3 tracking-wide">
@@ -65,7 +65,7 @@ export default function AboutThisSite() {
                 >
                   {point.title}
                 </h3>
-                <p style={{ color: '#2D2D2D', opacity: 0.7 }} className="text-sm leading-relaxed">
+                <p className="text-muted-on-cream text-base leading-relaxed">
                   {point.text}
                 </p>
               </StaggerItem>

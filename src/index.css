@@ -38,11 +38,6 @@ body {
   to { transform: scaleX(1); }
 }
 
-@keyframes hero-chevron-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(7px); }
-}
-
 .hero-gradient {
   background-color: #152238;
   isolation: isolate;
@@ -90,11 +85,6 @@ body {
   animation: hero-divider-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.hero-scroll-chevron {
-  display: block;
-  animation: hero-chevron-bounce 1.6s ease-in-out infinite;
-}
-
 .hero-cta {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -139,12 +129,8 @@ a:focus:not(:focus-visible) {
     scroll-behavior: auto;
   }
 
-  /* Soften large background motion only — keep subtle sparkles/stat bob for polish */
+  /* Soften large background motion only — keep subtle sparkles for polish */
   .hero-gradient::before {
-    animation: none !important;
-  }
-
-  .hero-scroll-chevron {
     animation: none !important;
   }
 

@@ -10,7 +10,7 @@ export default function RunningForOffice() {
       number: '01',
       title: 'Choose Your Office',
       content: (
-        <div className="space-y-3 text-sm leading-relaxed" style={{ color: '#2D2D2D', opacity: 0.85 }}>
+        <div className="space-y-3 text-base leading-relaxed text-muted-on-cream">
           <p>Think about your strengths. City offices are great for everyone — lower stakes, immediate community. County and state offices are more competitive but absolutely worth trying.</p>
           <p>You can run at multiple levels throughout the week. Don&apos;t stop after one race.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
@@ -37,8 +37,8 @@ export default function RunningForOffice() {
       number: '02',
       title: 'Write Your Speech (60–90 seconds)',
       content: (
-        <div className="space-y-4 text-sm leading-relaxed">
-          <p style={{ color: '#2D2D2D', opacity: 0.85 }}>The structure that works every time:</p>
+        <div className="space-y-4 text-base leading-relaxed">
+          <p className="text-muted-on-cream">The structure that works every time:</p>
           <div className="space-y-2">
             {[
               { step: '1. Hook', desc: 'Don\'t start with "Hi my name is." Start with something that makes people look up.' },
@@ -52,8 +52,8 @@ export default function RunningForOffice() {
                 className="flex gap-3 p-3 rounded-xl"
                 style={{ backgroundColor: 'rgba(27,42,74,0.04)' }}
               >
-                <span className="font-bold text-xs flex-shrink-0" style={{ color: '#C9A84C' }}>{item.step}</span>
-                <span className="text-xs" style={{ color: '#2D2D2D', opacity: 0.8 }}>{item.desc}</span>
+                <span className="font-bold text-sm flex-shrink-0" style={{ color: '#C9A84C' }}>{item.step}</span>
+                <span className="text-sm text-muted-on-cream">{item.desc}</span>
               </div>
             ))}
           </div>
@@ -75,7 +75,7 @@ export default function RunningForOffice() {
       number: '03',
       title: 'Make Your Campaign Poster (State Only)',
       content: (
-        <div className="space-y-3 text-sm leading-relaxed">
+        <div className="space-y-3 text-base leading-relaxed">
           <div
             className="p-4 rounded-xl"
             style={{ backgroundColor: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.35)' }}
@@ -83,13 +83,13 @@ export default function RunningForOffice() {
             <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#C9A84C' }}>
               Important Distinction
             </p>
-            <p className="text-xs leading-relaxed" style={{ color: '#1B2A4A' }}>
+            <p className="text-sm leading-relaxed" style={{ color: '#1B2A4A' }}>
               Campaign posters are for <strong>state offices only</strong>. If you&apos;re running for city or county,
               you do <strong>not</strong> make a poster — focus on speeches, introductions, and relationships.
               Posters become part of the campaign once you&apos;re running at the state level.
             </p>
           </div>
-          <p className="text-xs" style={{ color: '#2D2D2D', opacity: 0.75 }}>
+          <p className="text-sm text-muted-on-cream">
             If you&apos;re running for a state office, here&apos;s what makes a strong poster:
           </p>
           <div className="grid grid-cols-1 gap-2">
@@ -124,7 +124,7 @@ export default function RunningForOffice() {
       number: '04',
       title: 'Campaign — But Know the Rules',
       content: (
-        <div className="space-y-4 text-sm leading-relaxed">
+        <div className="space-y-4 text-base leading-relaxed">
           <div>
             <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
               By Level — Posters &amp; Fundraising
@@ -149,25 +149,25 @@ export default function RunningForOffice() {
                   className="p-3 rounded-xl"
                   style={{ backgroundColor: 'rgba(27,42,74,0.04)', borderLeft: '3px solid #C9A84C' }}
                 >
-                  <p className="font-semibold text-xs mb-1" style={{ color: '#1B2A4A' }}>{item.level}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: '#2D2D2D', opacity: 0.8 }}>{item.rules}</p>
+                  <p className="font-semibold text-sm mb-1" style={{ color: '#1B2A4A' }}>{item.level}</p>
+                  <p className="text-sm leading-relaxed text-muted-on-cream">{item.rules}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="p-4 rounded-xl" style={{ backgroundColor: '#FEF3C7', border: '1px solid #FCD34D' }}>
-            <p className="font-semibold text-xs mb-2" style={{ color: '#92400E' }}>Important Rule (When You Fundraise)</p>
-            <p className="text-xs" style={{ color: '#92400E' }}>
+            <p className="font-semibold text-sm mb-2" style={{ color: '#92400E' }}>Important Rule (When You Fundraise)</p>
+            <p className="text-sm" style={{ color: '#92400E' }}>
               When you are fundraising, you are NOT campaigning. You can ONLY start campaigning AFTER you are announced as a qualified candidate.
             </p>
           </div>
 
           <div>
-            <p className="text-xs font-semibold mb-2" style={{ color: '#1B2A4A' }}>
+            <p className="text-sm font-semibold mb-2" style={{ color: '#1B2A4A' }}>
               If you&apos;re fundraising (state required · county optional)
             </p>
-            <p className="text-xs mb-3" style={{ color: '#2D2D2D', opacity: 0.85 }}>
+            <p className="text-sm mb-3 text-muted-on-cream">
               Script: <em>&quot;I am fundraising to file for a state office, are you willing to contribute a donation?&quot;</em> — do NOT ask for votes during fundraising.
             </p>
             <div className="space-y-2">
@@ -179,7 +179,7 @@ export default function RunningForOffice() {
                 'Ask directly: "I\'m running for [X] — I\'d love your support"',
                 'Support other candidates too — this is collaborative, not cutthroat',
               ].map((rule) => (
-                <div key={rule} className="flex items-start gap-2 text-xs" style={{ color: '#2D2D2D', opacity: 0.8 }}>
+                <div key={rule} className="flex items-start gap-2 text-sm text-muted-on-cream">
                   <span style={{ color: '#C9A84C' }}>→</span> {rule}
                 </div>
               ))}
@@ -192,7 +192,7 @@ export default function RunningForOffice() {
       number: '05',
       title: 'Delivery Tips',
       content: (
-        <div className="space-y-2 text-sm leading-relaxed">
+        <div className="space-y-2 text-base leading-relaxed">
           {[
             { tip: 'Practice out loud', desc: 'At least 5 times — not in your head, out loud.' },
             { tip: 'Speak slower', desc: 'Slower than you think you need to. Nerves speed you up.' },
@@ -206,10 +206,10 @@ export default function RunningForOffice() {
               className="flex gap-3 p-3 rounded-xl"
               style={{ backgroundColor: 'rgba(27,42,74,0.04)' }}
             >
-              <span className="font-bold text-xs flex-shrink-0 mt-0.5" style={{ color: '#C9A84C' }}>✓</span>
+              <span className="font-bold text-sm flex-shrink-0 mt-0.5" style={{ color: '#C9A84C' }}>✓</span>
               <div>
-                <span className="font-medium text-xs" style={{ color: '#1B2A4A' }}>{item.tip}: </span>
-                <span className="text-xs" style={{ color: '#2D2D2D', opacity: 0.75 }}>{item.desc}</span>
+                <span className="font-medium text-sm" style={{ color: '#1B2A4A' }}>{item.tip}: </span>
+                <span className="text-sm text-muted-on-cream">{item.desc}</span>
               </div>
             </div>
           ))}
@@ -232,7 +232,7 @@ export default function RunningForOffice() {
             >
               Running for Office
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
+            <p className="text-muted-on-cream text-base leading-relaxed max-w-xl mx-auto">
               On Day 1, you will give a speech. In front of everyone. Whether you&apos;re ready or not. Here&apos;s how to be ready — and why you should run for everything.
             </p>
           </div>
@@ -330,7 +330,7 @@ export default function RunningForOffice() {
             >
               What to Do If You Lose
             </h3>
-            <p className="text-sm leading-relaxed mb-5" style={{ color: '#2D2D2D', opacity: 0.8 }}>
+            <p className="text-base leading-relaxed mb-5 text-muted-on-cream">
               Most people lose at least one race. That doesn&apos;t mean you failed — it means you showed up. Here&apos;s how to reset and keep going.
             </p>
             <div className="space-y-3">
@@ -346,10 +346,10 @@ export default function RunningForOffice() {
                   className="flex gap-3 p-3 rounded-xl"
                   style={{ backgroundColor: 'rgba(27,42,74,0.04)' }}
                 >
-                  <span className="font-bold text-xs flex-shrink-0 mt-0.5" style={{ color: '#C9A84C' }}>→</span>
+                  <span className="font-bold text-sm flex-shrink-0 mt-0.5" style={{ color: '#C9A84C' }}>→</span>
                   <div>
-                    <p className="font-medium text-xs mb-0.5" style={{ color: '#1B2A4A' }}>{item.title}</p>
-                    <p className="text-xs leading-relaxed" style={{ color: '#2D2D2D', opacity: 0.75 }}>{item.desc}</p>
+                    <p className="font-medium text-sm mb-0.5" style={{ color: '#1B2A4A' }}>{item.title}</p>
+                    <p className="text-sm leading-relaxed text-muted-on-cream">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -369,7 +369,7 @@ export default function RunningForOffice() {
               style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
               className="text-xl italic leading-relaxed mb-4"
             >
-              &quot;You might not win every race you enter. That&apos;s not the point. The point is that you tried, you spoke, you put yourself out there. Run for everything. Every speech you give makes the next one easier.&quot;
+              &quot;You might not win every race you enter. That&apos;s not the point. The point is that you tried. You spoke. You put yourself out there. Run for everything. Every speech you give makes the next one easier.&quot;
             </p>
             <div style={{ backgroundColor: '#C9A84C' }} className="w-12 h-0.5 mx-auto" />
           </div>

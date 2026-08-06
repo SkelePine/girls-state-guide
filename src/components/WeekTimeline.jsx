@@ -142,24 +142,32 @@ export default function WeekTimeline() {
           </p>
         </div>
 
-        {/* Day Selector */}
-        <StaggerContainer className="flex flex-wrap justify-center gap-2 mb-10">
+        {/* Day Selector — swipe on mobile, wrap on larger screens */}
+        <div
+          className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 mb-10 overflow-x-auto overscroll-x-contain pb-1 -mx-1 px-1"
+          style={{ scrollbarWidth: 'none' }}
+          role="tablist"
+          aria-label="Days of the week"
+        >
           {days.map((day, index) => (
-            <StaggerItem key={index}>
-              <button
-                onClick={() => setActiveDay(index)}
-                className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
-                style={{
-                  backgroundColor: activeDay === index ? '#1B2A4A' : 'white',
-                  color: activeDay === index ? 'white' : '#1B2A4A',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                }}
-              >
-                {day.label}
-              </button>
-            </StaggerItem>
+            <button
+              key={day.label}
+              type="button"
+              role="tab"
+              aria-selected={activeDay === index}
+              onClick={() => setActiveDay(index)}
+              className="flex-shrink-0 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border-none cursor-pointer whitespace-nowrap"
+              style={{
+                backgroundColor: activeDay === index ? '#1B2A4A' : 'white',
+                color: activeDay === index ? 'white' : '#1B2A4A',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                minHeight: 44,
+              }}
+            >
+              {day.label}
+            </button>
           ))}
-        </StaggerContainer>
+        </div>
 
         {/* Active Day Content */}
         <div className="max-w-3xl mx-auto">
@@ -167,15 +175,15 @@ export default function WeekTimeline() {
                style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}>
 
             {/* Day Header */}
-            <div style={{ backgroundColor: '#1B2A4A' }} className="p-8">
-              <div className="flex items-center gap-4 mb-3">
+            <div style={{ backgroundColor: '#1B2A4A' }} className="p-5 sm:p-8">
+              <div className="flex items-center gap-3 sm:gap-4 mb-3">
                 <IconBadge size="xl" variant="light">{days[activeDay].icon}</IconBadge>
                 <div>
                   <p style={{ color: '#C9A84C' }} className="text-xs uppercase tracking-widest">
                     {days[activeDay].label}
                   </p>
                   <h3 style={{ color: 'white', fontFamily: '"Playfair Display", serif' }}
-                      className="text-2xl font-bold">
+                      className="text-xl sm:text-2xl font-bold">
                     {days[activeDay].title}
                   </h3>
                 </div>
@@ -187,7 +195,7 @@ export default function WeekTimeline() {
             </div>
 
             {/* Day Content */}
-            <div style={{ backgroundColor: 'white' }} className="p-8">
+            <div style={{ backgroundColor: 'white' }} className="p-5 sm:p-8">
               <StaggerContainer className="space-y-3 mb-6" key={activeDay}>
                 {days[activeDay].content.map((item, i) => (
                   <StaggerItem key={i} className="flex items-start gap-3 text-sm"

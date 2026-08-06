@@ -447,7 +447,10 @@ export default function Navbar() {
               animate="visible"
               exit="exit"
             >
-              <div className="flex flex-col gap-1 pb-6 pt-1">
+              <div
+                className="flex flex-col gap-1 pb-6 pt-1 overflow-y-auto overscroll-y-contain"
+                style={{ maxHeight: 'min(70vh, calc(100dvh - 4.5rem))' }}
+              >
                 {navGroups.map((group) => {
                   const expanded = mobileExpanded === group.label
                   const active = isGroupActive(group)
@@ -475,7 +478,7 @@ export default function Navbar() {
                         type="button"
                         onClick={() => setMobileExpanded(expanded ? null : group.label)}
                         className="w-full flex items-center justify-between py-3 text-sm bg-transparent border-none cursor-pointer text-left"
-                        style={{ color: active || expanded ? '#C9A84C' : 'white' }}
+                        style={{ color: active || expanded ? '#C9A84C' : 'white', minHeight: 44 }}
                         aria-expanded={expanded}
                       >
                         {group.label}
@@ -504,8 +507,11 @@ export default function Navbar() {
                                     key={`${group.label}-m-${link.name}`}
                                     type="button"
                                     onClick={() => scrollToSection(link.id, link.tab)}
-                                    className="text-sm text-left py-2 bg-transparent border-none cursor-pointer transition-colors duration-200"
-                                    style={{ color: linkActive ? '#C9A84C' : 'rgba(255,255,255,0.75)' }}
+                                    className="text-sm text-left py-2.5 bg-transparent border-none cursor-pointer transition-colors duration-200"
+                                    style={{
+                                      color: linkActive ? '#C9A84C' : 'rgba(255,255,255,0.75)',
+                                      minHeight: 44,
+                                    }}
                                   >
                                     {link.name}
                                   </button>

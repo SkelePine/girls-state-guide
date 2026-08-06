@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useHashTab } from '../hooks/useHashTab'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
 import IconBadge from './IconBadge'
@@ -148,10 +148,22 @@ export default function PrepareToGo() {
   const [activeTab, setActiveTab] = useHashTab('prepare', 'packing', ['packing', 'dorms', 'speeches'])
   const [checked, setChecked] = useState(loadChecked)
   const [activeCategory, setActiveCategory] = useState('clothing')
+  const categoryBtnRefs = useRef({})
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(checked))
   }, [checked])
+
+  const selectCategory = (id) => {
+    setActiveCategory(id)
+    requestAnimationFrame(() => {
+      categoryBtnRefs.current[id]?.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      })
+    })
+  }
 
   const toggleItem = (categoryId, index) => {
     const key = `${categoryId}-${index}`
@@ -182,7 +194,7 @@ export default function PrepareToGo() {
             >
               Prepare to Go
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
+            <p className="text-muted-on-cream text-base leading-relaxed max-w-xl mx-auto">
               Pack smart, know your dorm, and memorize your speech times before you arrive.
             </p>
           </div>
@@ -267,43 +279,52 @@ export default function PrepareToGo() {
                 </p>
               </div>
 
-              {/* Category Tabs */}
-              <StaggerContainer className="flex flex-wrap gap-2 mb-6 no-print">
+              {/* Category Tabs — swipe on mobile, wrap on larger screens */}
+              <div
+                className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 mb-6 no-print overflow-x-auto overscroll-x-contain pb-1 -mx-1 px-1"
+                style={{ scrollbarWidth: 'none' }}
+                role="tablist"
+                aria-label="Packing categories"
+              >
                 {packingCategories.map((cat) => {
                   const catChecked = cat.items.filter((_, i) => checked[`${cat.id}-${i}`]).length
                   const isActive = activeCategory === cat.id
                   return (
-                    <StaggerItem key={cat.id}>
-                      <button
-                        type="button"
-                        onClick={() => setActiveCategory(cat.id)}
-                        className="px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border-none"
-                        style={{
-                          backgroundColor: isActive ? '#1B2A4A' : 'white',
-                          color: isActive ? 'white' : '#1B2A4A',
-                          boxShadow: isActive
-                            ? '0 6px 18px rgba(27,42,74,0.22)'
-                            : '0 2px 10px rgba(0,0,0,0.06)',
-                          minHeight: 44,
-                        }}
-                      >
-                        {cat.label}
-                        {catChecked > 0 && (
-                          <span
-                            className="ml-2 text-xs px-1.5 py-0.5 rounded-full"
-                            style={{
-                              backgroundColor: isActive ? '#C9A84C' : 'rgba(201,168,76,0.2)',
-                              color: isActive ? '#1B2A4A' : '#1B2A4A',
-                            }}
-                          >
-                            {catChecked}/{cat.items.length}
-                          </span>
-                        )}
-                      </button>
-                    </StaggerItem>
+                    <button
+                      key={cat.id}
+                      ref={(el) => {
+                        categoryBtnRefs.current[cat.id] = el
+                      }}
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      onClick={() => selectCategory(cat.id)}
+                      className="flex-shrink-0 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border-none whitespace-nowrap"
+                      style={{
+                        backgroundColor: isActive ? '#1B2A4A' : 'white',
+                        color: isActive ? 'white' : '#1B2A4A',
+                        boxShadow: isActive
+                          ? '0 6px 18px rgba(27,42,74,0.22)'
+                          : '0 2px 10px rgba(0,0,0,0.06)',
+                        minHeight: 44,
+                      }}
+                    >
+                      {cat.label}
+                      {catChecked > 0 && (
+                        <span
+                          className="ml-2 text-xs px-1.5 py-0.5 rounded-full"
+                          style={{
+                            backgroundColor: isActive ? '#C9A84C' : 'rgba(201,168,76,0.2)',
+                            color: '#1B2A4A',
+                          }}
+                        >
+                          {catChecked}/{cat.items.length}
+                        </span>
+                      )}
+                    </button>
                   )
                 })}
-              </StaggerContainer>
+              </div>
 
               {/* Checklist — screen */}
               <StaggerContainer
@@ -318,33 +339,36 @@ export default function PrepareToGo() {
                   const key = `${activeCategory}-${index}`
                   const isChecked = checked[key]
                   return (
-                    <StaggerItem
-                      key={index}
-                      onClick={() => toggleItem(activeCategory, index)}
-                      className="flex items-center gap-4 px-5 py-4 cursor-pointer transition-all duration-150 border-b last:border-b-0"
-                      style={{
-                        backgroundColor: isChecked ? 'rgba(201,168,76,0.08)' : 'white',
-                        borderColor: 'rgba(27,42,74,0.06)',
-                      }}
-                    >
-                      <div
-                        className="flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all"
+                    <StaggerItem key={index} className="border-b last:border-b-0" style={{ borderColor: 'rgba(27,42,74,0.06)' }}>
+                      <button
+                        type="button"
+                        onClick={() => toggleItem(activeCategory, index)}
+                        aria-pressed={isChecked}
+                        className="w-full flex items-center gap-4 px-5 py-4 cursor-pointer transition-all duration-150 border-none text-left"
                         style={{
-                          borderColor: isChecked ? '#C9A84C' : '#D1D5DB',
-                          backgroundColor: isChecked ? '#C9A84C' : 'transparent',
+                          backgroundColor: isChecked ? 'rgba(201,168,76,0.08)' : 'white',
                         }}
                       >
-                        {isChecked && <span className="text-white text-xs font-bold">✓</span>}
-                      </div>
-                      <span
-                        className="text-sm leading-relaxed transition-all"
-                        style={{
-                          color: isChecked ? '#9CA3AF' : '#2D2D2D',
-                          textDecoration: isChecked ? 'line-through' : 'none',
-                        }}
-                      >
-                        {item}
-                      </span>
+                        <span
+                          className="flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all"
+                          style={{
+                            borderColor: isChecked ? '#C9A84C' : '#D1D5DB',
+                            backgroundColor: isChecked ? '#C9A84C' : 'transparent',
+                          }}
+                          aria-hidden="true"
+                        >
+                          {isChecked && <span className="text-white text-xs font-bold">✓</span>}
+                        </span>
+                        <span
+                          className="text-sm leading-relaxed transition-all"
+                          style={{
+                            color: isChecked ? '#9CA3AF' : '#2D2D2D',
+                            textDecoration: isChecked ? 'line-through' : 'none',
+                          }}
+                        >
+                          {item}
+                        </span>
+                      </button>
                     </StaggerItem>
                   )
                 })}

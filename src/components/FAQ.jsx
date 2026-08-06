@@ -94,7 +94,7 @@ export default function FAQ() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             FAQ
           </h2>
-          <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
+          <p className="text-muted-on-cream text-base leading-relaxed max-w-xl mx-auto">
             Everything you were wondering but didn't know who to ask.
           </p>
         </div>
@@ -121,8 +121,7 @@ export default function FAQ() {
               </button>
               {openItem === index && (
                 <div className="px-6 pb-6" style={{ backgroundColor: 'white' }}>
-                  <p className="text-sm leading-relaxed pt-4"
-                     style={{ color: '#2D2D2D', opacity: 0.8 }}>
+                  <p className="text-base leading-relaxed pt-4 text-muted-on-cream">
                     {faq.a}
                   </p>
                 </div>

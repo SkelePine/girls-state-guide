@@ -191,14 +191,20 @@ export default function SectionIndicator() {
     }
   }, [])
 
+  const prevGroupIndex = useRef(null)
+
   useEffect(() => {
     setBrowseGroup(activeGroupIndex)
     if (hoveringRef.current) return
 
+    // Toast only when the nav group changes (e.g. Getting In → Prepare), not every subsection
+    if (prevGroupIndex.current === activeGroupIndex) return
+    prevGroupIndex.current = activeGroupIndex
+
     const meta = allSections.find((s) => s.id === activeId)
     if (!meta) return
 
-    setToastLabel({ group: meta.group, label: meta.label, key: activeId + Date.now() })
+    setToastLabel({ group: meta.group, label: meta.label, key: meta.group + Date.now() })
     if (toastTimer.current) clearTimeout(toastTimer.current)
     toastTimer.current = setTimeout(() => setToastLabel(null), LABEL_MS)
   }, [activeId, activeGroupIndex])

@@ -113,7 +113,7 @@ export default function Hero() {
       </div>
 
       {/* Soft gold secondary pills — visual only; same jump targets */}
-      <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-7">
+      <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-5">
         {secondaryCtas.map((cta) => (
           <button
             key={cta.label}
@@ -132,8 +132,8 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Stats — count up + gentle float */}
-      <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 mb-5 w-full max-w-3xl">
+      {/* Stats — count-up + gentle float */}
+      <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 mb-4 w-full max-w-3xl">
         {stats.map((stat, index) => (
           <div key={stat.key} className="text-center">
             <p
@@ -152,7 +152,7 @@ export default function Hero() {
               />
             </p>
             <p
-              className="text-[10px] sm:text-xs uppercase tracking-widest mt-1"
+              className="text-xs uppercase tracking-widest mt-1"
               style={{ color: 'rgba(255,255,255,0.72)' }}
             >
               {stat.label}

@@ -27,8 +27,10 @@ export default function BackToTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="fixed bottom-8 right-8 z-50 flex items-center justify-center rounded-full cursor-pointer"
+          className="fixed z-50 flex items-center justify-center rounded-full cursor-pointer"
           style={{
+            right: 'max(1.5rem, env(safe-area-inset-right, 0px))',
+            bottom: 'max(1.5rem, env(safe-area-inset-bottom, 0px))',
             width: 48,
             height: 48,
             minWidth: 44,

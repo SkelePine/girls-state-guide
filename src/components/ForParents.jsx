@@ -94,7 +94,7 @@ export default function ForParents() {
             >
               For Parents
             </h2>
-            <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm leading-relaxed max-w-xl mx-auto">
+            <p className="text-muted-on-cream text-base leading-relaxed max-w-xl mx-auto">
               Your daughter just got selected for one of the most prestigious programs in California. Here&apos;s everything you need to know — from drop-off to pick-up and everything in between.
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function ForParents() {
                   </button>
                   {open && (
                     <div className="px-5 sm:px-6 pb-6" style={{ backgroundColor: '#1B2A4A' }}>
-                      <p className="text-white opacity-80 text-sm leading-relaxed pt-2 border-t border-white/10">
+                      <p className="text-white text-base leading-relaxed pt-2 border-t border-white/10" style={{ opacity: 0.92 }}>
                         {section.content}
                       </p>
                     </div>

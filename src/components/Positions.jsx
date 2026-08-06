@@ -1,9 +1,22 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
 
 export default function Positions() {
   const [activeTab, setActiveTab] = useState('city')
   const [expandedCard, setExpandedCard] = useState(null)
+  const tabBtnRefs = useRef({})
+
+  const selectTab = (id) => {
+    setActiveTab(id)
+    setExpandedCard(null)
+    requestAnimationFrame(() => {
+      tabBtnRefs.current[id]?.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      })
+    })
+  }
 
   const tabs = [
     { id: 'city', label: '🏘️ City' },
@@ -698,9 +711,10 @@ export default function Positions() {
             )}
           </div>
           <button
+            type="button"
             onClick={() => toggleCard(id)}
-            className="text-xs font-medium transition-all duration-200"
-            style={{ color: '#C9A84C' }}
+            className="text-xs font-medium transition-all duration-200 bg-transparent border-none cursor-pointer px-0"
+            style={{ color: '#C9A84C', minHeight: 44 }}
           >
             {isExpanded ? 'Show Less ↑' : 'Learn More →'}
           </button>
@@ -740,23 +754,33 @@ export default function Positions() {
           </p>
         </div>
 
-        <StaggerContainer className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3 mb-12 overflow-x-auto pb-1 -mx-1 px-1" style={{ scrollbarWidth: 'none' }}>
+        <div
+          className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3 mb-12 overflow-x-auto overscroll-x-contain pb-1 -mx-1 px-1"
+          style={{ scrollbarWidth: 'none' }}
+          role="tablist"
+          aria-label="Position levels"
+        >
           {tabs.map((tab) => (
-            <StaggerItem key={tab.id} className="flex-shrink-0">
-              <button
-                onClick={() => { setActiveTab(tab.id); setExpandedCard(null) }}
-                className="px-5 sm:px-6 rounded-full text-sm font-medium transition-all duration-200 border-none cursor-pointer"
-                style={{
-                  minHeight: 44,
-                  backgroundColor: activeTab === tab.id ? '#C9A84C' : 'rgba(255,255,255,0.1)',
-                  color: activeTab === tab.id ? '#1B2A4A' : 'white',
-                }}
-              >
-                {tab.label}
-              </button>
-            </StaggerItem>
+            <button
+              key={tab.id}
+              ref={(el) => {
+                tabBtnRefs.current[tab.id] = el
+              }}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === tab.id}
+              onClick={() => selectTab(tab.id)}
+              className="flex-shrink-0 px-5 sm:px-6 rounded-full text-sm font-medium transition-all duration-200 border-none cursor-pointer whitespace-nowrap"
+              style={{
+                minHeight: 44,
+                backgroundColor: activeTab === tab.id ? '#C9A84C' : 'rgba(255,255,255,0.1)',
+                color: activeTab === tab.id ? '#1B2A4A' : 'white',
+              }}
+            >
+              {tab.label}
+            </button>
           ))}
-        </StaggerContainer>
+        </div>
 
         {activeTab === 'city' && (
           <div>

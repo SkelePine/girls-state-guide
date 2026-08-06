@@ -59,13 +59,11 @@ const beforeCategories = [
       'Submit your bill by the deadline',
       'Apply for Samsung Scholarship before Day 1',
       'Research positions you want to run for',
-      'Practice your speech out loud at least 5 times',
-      'Make your campaign poster',
+      'Practice creating a speech out loud',
       'Confirm your bus pickup time and location with your ALA unit',
       'Confirm if bedding is provided',
       'Notify organizers of any dietary restrictions or medical needs',
       'Download the Girls State bank app at mykidsbank.org (Banking Number 3081)',
-      'Print photos of yourself for campaign posters',
     ],
   },
   {
@@ -238,30 +236,34 @@ export default function HowToApply() {
                         const key = `${cat.id}-${index}`
                         const isChecked = checked[key]
                         return (
-                          <StaggerItem
-                            key={key}
-                            onClick={() => toggleItem(cat.id, index)}
-                            className="card-hover flex items-start gap-3 p-4 rounded-xl cursor-pointer"
-                            style={{ backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
-                          >
-                            <div
-                              className="flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center mt-0.5"
-                              style={{
-                                borderColor: isChecked ? '#C9A84C' : '#D1D5DB',
-                                backgroundColor: isChecked ? '#C9A84C' : 'transparent',
-                              }}
+                          <StaggerItem key={key}>
+                            <button
+                              type="button"
+                              onClick={() => toggleItem(cat.id, index)}
+                              aria-pressed={isChecked}
+                              className="card-hover w-full flex items-start gap-3 p-4 rounded-xl cursor-pointer border-none text-left"
+                              style={{ backgroundColor: 'white', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
                             >
-                              {isChecked && <span className="text-white text-xs">✓</span>}
-                            </div>
-                            <span
-                              className="text-sm leading-relaxed transition-all"
-                              style={{
-                                color: isChecked ? '#9CA3AF' : '#2D2D2D',
-                                textDecoration: isChecked ? 'line-through' : 'none',
-                              }}
-                            >
-                              {item}
-                            </span>
+                              <span
+                                className="flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center mt-0.5"
+                                style={{
+                                  borderColor: isChecked ? '#C9A84C' : '#D1D5DB',
+                                  backgroundColor: isChecked ? '#C9A84C' : 'transparent',
+                                }}
+                                aria-hidden="true"
+                              >
+                                {isChecked && <span className="text-white text-xs">✓</span>}
+                              </span>
+                              <span
+                                className="text-sm leading-relaxed transition-all"
+                                style={{
+                                  color: isChecked ? '#9CA3AF' : '#2D2D2D',
+                                  textDecoration: isChecked ? 'line-through' : 'none',
+                                }}
+                              >
+                                {item}
+                              </span>
+                            </button>
                           </StaggerItem>
                         )
                       })}
