@@ -59,7 +59,7 @@ const beforeCategories = [
       'Submit your bill by the deadline',
       'Apply for Samsung Scholarship before Day 1',
       'Research positions you want to run for',
-      'Practice creating a speech out loud',
+      'Submit your honor badge',
       'Confirm your bus pickup time and location with your ALA unit',
       'Confirm if bedding is provided',
       'Notify organizers of any dietary restrictions or medical needs',
@@ -71,7 +71,6 @@ const beforeCategories = [
     label: 'Day of Departure',
     items: [
       'Charge your portable battery pack',
-      'Pack blue tape for campaign posters',
       'Bring cash $20–40 for incidentals',
       'Pack your submitted bill printed out',
       'Bring index cards for speech notes',

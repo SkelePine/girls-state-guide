@@ -48,6 +48,7 @@ const packingCategories = [
       'Bathrobe or cover-up for walking to bathroom',
       'All skincare (morning + night routine)',
       'Hair tools (brush, ties, clips, dry shampoo)',
+      'Hot tools (straightener, curling iron, hair dryer)',
       'Deodorant — stress sweating is real, bring extra',
       'Feminine hygiene products',
       'Toothbrush, toothpaste, floss',
@@ -75,7 +76,7 @@ const packingCategories = [
     id: 'school',
     label: '📚 School Supplies',
     items: [
-      'Notebook + pens — write down your memories every night',
+      'Notebook + pens',
       'Highlighters',
       'Index cards',
       'Sharpies',
