@@ -1,21 +1,60 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
 import GlossaryModal from './Glossary'
-import { openPrivacyNotice } from './PrivacyNotice'
+import LegalFooterLinks from './LegalFooterLinks'
 import { siteConfig } from '../siteConfig'
+import { sanitizeText, isValidEmail } from '../utils/sanitize'
+
+const fieldStyle = {
+  backgroundColor: 'rgba(255,255,255,0.08)',
+  color: 'white',
+  border: '1px solid rgba(201,168,76,0.35)',
+  minHeight: 44,
+}
+
+const labelClass = 'block text-xs font-medium mb-1.5 text-muted-on-navy'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
+  const [publishPermission, setPublishPermission] = useState('') // '' | 'yes' | 'no'
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [errors, setErrors] = useState({})
   const [glossaryOpen, setGlossaryOpen] = useState(false)
-  const year = new Date().getFullYear()
+
+  const validate = () => {
+    const next = {}
+    const cleanEmail = sanitizeText(email, { maxLength: 254 })
+    const cleanMessage = sanitizeText(message, { maxLength: 5000 })
+
+    if (!cleanEmail) next.email = 'Email is required.'
+    else if (!isValidEmail(cleanEmail)) next.email = 'Enter a valid email address.'
+
+    if (!cleanMessage) next.message = 'Please share a short note about your experience.'
+
+    if (publishPermission !== 'yes' && publishPermission !== 'no') {
+      next.publishPermission = 'Please choose whether we may publish your story.'
+    }
+
+    setErrors(next)
+    return Object.keys(next).length === 0
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!email.trim()) return
+    if (!validate()) {
+      setStatus('idle')
+      return
+    }
+
+    const cleanName = sanitizeText(name, { maxLength: 200 })
+    const cleanEmail = sanitizeText(email, { maxLength: 254 })
+    const cleanMessage = sanitizeText(message, { maxLength: 5000 })
+    const permissionLabel =
+      publishPermission === 'yes'
+        ? 'Yes — may publish on the website'
+        : 'No — do not publish; private to site operator'
 
     const endpoint = siteConfig.formspreeEndpoint
     if (endpoint) {
@@ -25,9 +64,10 @@ export default function Footer() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({
-            email: email.trim(),
-            name: name.trim() || 'Alumna',
-            message: message.trim() || 'I would like to share my Girls State story.',
+            email: cleanEmail,
+            name: cleanName || 'Alumna',
+            message: cleanMessage,
+            publish_permission: permissionLabel,
             _subject: 'CA Girls State Guide — Alumna story',
           }),
         })
@@ -36,6 +76,8 @@ export default function Footer() {
         setEmail('')
         setName('')
         setMessage('')
+        setPublishPermission('')
+        setErrors({})
       } catch {
         setStatus('error')
       }
@@ -45,14 +87,13 @@ export default function Footer() {
     if (siteConfig.contactEmail) {
       const subject = encodeURIComponent('CA Girls State Guide — Alumna story')
       const body = encodeURIComponent(
-        `Name: ${name || '(not provided)'}\nEmail: ${email}\n\n${message || 'I would like to share my Girls State story.'}`
+        `Name: ${cleanName || '(not provided)'}\nEmail: ${cleanEmail}\nPublish permission: ${permissionLabel}\n\n${cleanMessage}`
       )
       window.location.href = `mailto:${siteConfig.contactEmail}?subject=${subject}&body=${body}`
       setStatus('sent')
       return
     }
 
-    // No Formspree / email configured — open Google Form
     window.open(siteConfig.googleFormUrl, '_blank', 'noopener,noreferrer')
     setStatus('sent')
   }
@@ -131,52 +172,119 @@ export default function Footer() {
           </div>
 
           <div className="max-w-md mx-auto mb-10 text-left" id="footer-share">
+            <h2
+              className="text-lg font-bold mb-2 text-center"
+              style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }}
+            >
+              Share your story
+            </h2>
             <p className="text-sm leading-relaxed mb-4 text-center text-muted-on-navy">
-              Are you a Girls State alumna? Share your story with future delegates.
+              Are you a Girls State alumna? Share your story with future delegates. Submissions are sent securely over
+              HTTPS to Formspree for the site operator to review.
             </p>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your name (optional)"
-                aria-label="Your name"
-                className="w-full px-4 py-3 rounded-lg text-sm border-none outline-none"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.08)',
-                  color: 'white',
-                  border: '1px solid rgba(201,168,76,0.35)',
-                  minHeight: 44,
-                }}
-              />
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your.email@example.com"
-                aria-label="Email address"
-                className="w-full px-4 py-3 rounded-lg text-sm border-none outline-none"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.08)',
-                  color: 'white',
-                  border: '1px solid rgba(201,168,76,0.35)',
-                  minHeight: 44,
-                }}
-              />
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="A short note about your experience"
-                aria-label="Message"
-                rows={3}
-                className="w-full px-4 py-3 rounded-lg text-sm border-none outline-none resize-y"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.08)',
-                  color: 'white',
-                  border: '1px solid rgba(201,168,76,0.35)',
-                }}
-              />
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
+              <div>
+                <label htmlFor="story-name" className={labelClass}>
+                  Your name <span className="opacity-70">(optional)</span>
+                </label>
+                <input
+                  id="story-name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  autoComplete="name"
+                  className="w-full px-4 py-3 rounded-lg text-sm border-none outline-none"
+                  style={fieldStyle}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="story-email" className={labelClass}>
+                  Email address <span className="font-semibold">(required)</span>
+                </label>
+                <input
+                  id="story-email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="email"
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  aria-describedby={errors.email ? 'story-email-error' : undefined}
+                  className="w-full px-4 py-3 rounded-lg text-sm border-none outline-none"
+                  style={{
+                    ...fieldStyle,
+                    border: errors.email ? '1px solid #FCA5A5' : fieldStyle.border,
+                  }}
+                />
+                {errors.email && (
+                  <p id="story-email-error" className="text-xs mt-1" style={{ color: '#FCA5A5' }} role="alert">
+                    {errors.email}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="story-message" className={labelClass}>
+                  Your story or note <span className="font-semibold">(required)</span>
+                </label>
+                <textarea
+                  id="story-message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  rows={3}
+                  aria-invalid={errors.message ? 'true' : 'false'}
+                  aria-describedby={errors.message ? 'story-message-error' : undefined}
+                  className="w-full px-4 py-3 rounded-lg text-sm border-none outline-none resize-y"
+                  style={{
+                    ...fieldStyle,
+                    minHeight: 96,
+                    border: errors.message ? '1px solid #FCA5A5' : fieldStyle.border,
+                  }}
+                />
+                {errors.message && (
+                  <p id="story-message-error" className="text-xs mt-1" style={{ color: '#FCA5A5' }} role="alert">
+                    {errors.message}
+                  </p>
+                )}
+              </div>
+
+              <fieldset className="m-0 p-0 border-none">
+                <legend className={`${labelClass} mb-2`}>
+                  May we publish your story on this website? <span className="font-semibold">(required)</span>
+                </legend>
+                <div className="flex flex-col gap-2" role="radiogroup" aria-required="true">
+                  <label className="flex items-start gap-3 text-sm text-muted-on-navy cursor-pointer" style={{ minHeight: 44 }}>
+                    <input
+                      type="radio"
+                      name="publish-permission"
+                      value="yes"
+                      checked={publishPermission === 'yes'}
+                      onChange={() => setPublishPermission('yes')}
+                      className="mt-1"
+                    />
+                    <span>Yes — you may publish my story (or an excerpt) on the website</span>
+                  </label>
+                  <label className="flex items-start gap-3 text-sm text-muted-on-navy cursor-pointer" style={{ minHeight: 44 }}>
+                    <input
+                      type="radio"
+                      name="publish-permission"
+                      value="no"
+                      checked={publishPermission === 'no'}
+                      onChange={() => setPublishPermission('no')}
+                      className="mt-1"
+                    />
+                    <span>No — keep it private for the site operator only</span>
+                  </label>
+                </div>
+                {errors.publishPermission && (
+                  <p className="text-xs mt-2" style={{ color: '#FCA5A5' }} role="alert">
+                    {errors.publishPermission}
+                  </p>
+                )}
+              </fieldset>
+
               <button
                 type="submit"
                 disabled={status === 'sending'}
@@ -192,8 +300,8 @@ export default function Footer() {
                   </p>
                 )}
                 {status === 'error' && (
-                  <p className="text-xs text-center" style={{ color: '#FCA5A5' }}>
-                    Something went wrong. Try the Google Form below.
+                  <p className="text-xs text-center" style={{ color: '#FCA5A5' }} role="alert">
+                    Something went wrong. Try the Google Form below, or check your connection and try again.
                   </p>
                 )}
               </div>
@@ -214,28 +322,7 @@ export default function Footer() {
 
           <div style={{ backgroundColor: 'rgba(255,255,255,0.1)' }} className="w-full h-px mb-6" />
 
-          <nav aria-label="Legal" className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-6 text-sm">
-            <Link to="/privacy" style={{ color: '#C9A84C', textDecoration: 'none', minHeight: 44, display: 'inline-flex', alignItems: 'center' }}>
-              Privacy
-            </Link>
-            <span aria-hidden="true" className="text-muted-on-navy self-center">·</span>
-            <Link to="/terms" style={{ color: '#C9A84C', textDecoration: 'none', minHeight: 44, display: 'inline-flex', alignItems: 'center' }}>
-              Terms
-            </Link>
-            <span aria-hidden="true" className="text-muted-on-navy self-center">·</span>
-            <button
-              type="button"
-              onClick={openPrivacyNotice}
-              className="bg-transparent border-none cursor-pointer text-sm"
-              style={{ color: '#C9A84C', minHeight: 44 }}
-            >
-              Privacy choices
-            </button>
-          </nav>
-
-          <p className="text-xs leading-relaxed text-muted-on-navy">
-            © {year} CA Girls State Guide · {siteConfig.byline}
-          </p>
+          <LegalFooterLinks />
         </div>
       </footer>
 

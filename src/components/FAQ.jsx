@@ -87,7 +87,7 @@ export default function FAQ() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
             Got Questions?
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}
@@ -144,7 +144,7 @@ export default function FAQ() {
           <p className="text-xs leading-relaxed text-muted-on-cream">
             This is an unofficial guide built by {siteConfig.author}, {siteConfig.authorRole}. Not affiliated with the American Legion Auxiliary. Always verify current information with your ALA unit and the official website at{' '}
             <a href="https://www.cagirlsstate.org" target="_blank" rel="noopener noreferrer"
-               style={{ color: '#C9A84C' }} className="underline">
+               className="underline text-gold-on-cream">
               cagirlsstate.org
             </a>.
             Program details, locations, and procedures may change year to year.

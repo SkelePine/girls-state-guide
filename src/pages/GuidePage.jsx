@@ -9,6 +9,7 @@ import SectionDivider from '../components/SectionDivider'
 import SectionIndicator from '../components/SectionIndicator'
 import MobileJumpMenu from '../components/MobileJumpMenu'
 import DecorSparkles from '../components/DecorSparkles'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 const AboutThisSite = lazy(() => import('../components/AboutThisSite'))
 const HowToApply = lazy(() => import('../components/HowToApply'))
@@ -33,6 +34,12 @@ function SectionFallback() {
 }
 
 export default function GuidePage() {
+  usePageMeta({
+    title: 'CA Girls State Guide — The Ultimate Delegate Resource by Inaaya Saif',
+    description:
+      'The unofficial actually-useful guide to ALA California Girls State — from the moment you get selected to the moment you get home. Built by 2026 delegate Inaaya Saif.',
+  })
+
   const reduceMotion = useReducedMotion()
   const [loading, setLoading] = useState(() => {
     if (reduceMotion) return false

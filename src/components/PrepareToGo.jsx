@@ -241,7 +241,7 @@ export default function PrepareToGo() {
                       type="button"
                       onClick={resetList}
                       className="text-xs font-medium cursor-pointer border-none bg-transparent underline-offset-2 hover:underline"
-                      style={{ color: '#B45353', minHeight: 44, padding: '8px 4px' }}
+                      style={{ color: '#B45353', minHeight: 44, minWidth: 44, padding: '8px 12px' }}
                     >
                       Reset
                     </button>

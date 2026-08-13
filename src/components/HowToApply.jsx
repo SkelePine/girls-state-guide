@@ -179,12 +179,14 @@ export default function HowToApply() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="px-5 py-2.5 rounded-full text-sm hover:opacity-80 transition-opacity inline-flex items-center"
                         style={{
                           backgroundColor: 'rgba(255,255,255,0.1)',
                           color: 'white',
                           border: '1px solid rgba(201,168,76,0.4)',
+                          minHeight: 44,
+                          textDecoration: 'none',
                         }}
-                        className="px-5 py-2 rounded-full text-sm hover:opacity-80 transition-opacity inline-block"
                       >
                         {link.label} →
                       </a>

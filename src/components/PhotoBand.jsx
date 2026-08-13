@@ -7,21 +7,21 @@ import { useState } from 'react'
 const DEFAULTS = {
   campus: {
     src: '/images/campus.jpg',
-    alt: 'UC Riverside campus during Girls State',
+    alt: 'Sunlit UC Riverside campus lawn and buildings during California Girls State',
     caption: 'Campus life · 2026 Session',
     // Prefer showing the building/lawn, not empty sky or extreme edges
     position: 'center center',
   },
   community: {
     src: '/images/community.jpg',
-    alt: 'Delegates gathered at Girls State',
+    alt: 'California Girls State delegates gathered outdoors in community and city groups',
     caption: 'City · County · Community',
     // Keep tents / crowd centered for wide crop
     position: 'center 40%',
   },
   ceremony: {
     src: '/images/ceremony.jpg',
-    alt: 'Flag ceremony or closing moments at Girls State',
+    alt: 'Delegates standing indoors for a Girls State flag ceremony',
     caption: 'Traditions that stay with you',
     // Lower % = show higher in the photo (more ceiling / top of room)
     position: 'center 50%',

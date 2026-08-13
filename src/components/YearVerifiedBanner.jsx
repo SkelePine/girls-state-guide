@@ -12,7 +12,7 @@ export default function YearVerifiedBanner() {
       role="note"
     >
       <p className="text-xs sm:text-sm leading-relaxed" style={{ color: '#1B2A4A' }}>
-        <span className="font-semibold" style={{ color: '#C9A84C' }}>
+        <span className="font-semibold text-gold-on-cream">
           Verified for {siteConfig.verifiedYear}
         </span>
         <span className="mx-2 opacity-40">·</span>

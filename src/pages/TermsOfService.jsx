@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom'
 import LegalLayout from './LegalLayout'
 import { siteConfig } from '../siteConfig'
+import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function TermsOfService() {
+  usePageMeta({
+    title: 'Terms of Service — CA Girls State Guide',
+    description:
+      'Terms for using the unofficial CA Girls State Guide: not ALA-affiliated, no warranties, acceptable use, and California governing law.',
+  })
+
   return (
     <LegalLayout title="Terms of Service" eyebrow="Using This Guide">
       <p>
@@ -19,7 +26,7 @@ export default function TermsOfService() {
         affiliated with, endorsed by, or an official publication of the American Legion Auxiliary, California Girls
         State, Girls Nation, or any ALA unit. Always confirm dates, campus location, deadlines, fees, and rules with your
         ALA unit and{' '}
-        <a href="https://www.cagirlsstate.org" target="_blank" rel="noopener noreferrer" style={{ color: '#C9A84C' }}>
+        <a href="https://www.cagirlsstate.org" target="_blank" rel="noopener noreferrer" className="text-gold-on-cream">
           cagirlsstate.org
         </a>
         .
@@ -81,7 +88,7 @@ export default function TermsOfService() {
       </h2>
       <p>
         Questions about these Terms: use the contact options on the{' '}
-        <Link to="/" style={{ color: '#C9A84C' }}>
+        <Link to="/" className="text-gold-on-cream">
           homepage
         </Link>
         .

@@ -228,23 +228,27 @@ export default function WeekTimeline() {
           {/* Navigation arrows */}
           <div className="flex justify-between mt-6">
             <button
+              type="button"
               onClick={() => setActiveDay(Math.max(0, activeDay - 1))}
               disabled={activeDay === 0}
-              className="px-5 py-2 rounded-full text-sm font-medium transition-all"
+              className="px-5 py-2.5 rounded-full text-sm font-medium transition-all border-none cursor-pointer disabled:cursor-not-allowed"
               style={{
+                minHeight: 44,
                 backgroundColor: activeDay === 0 ? 'rgba(0,0,0,0.05)' : '#1B2A4A',
-                color: activeDay === 0 ? 'rgba(0,0,0,0.3)' : 'white',
+                color: activeDay === 0 ? 'rgba(0,0,0,0.45)' : 'white',
               }}
             >
               ← Previous Day
             </button>
             <button
+              type="button"
               onClick={() => setActiveDay(Math.min(days.length - 1, activeDay + 1))}
               disabled={activeDay === days.length - 1}
-              className="px-5 py-2 rounded-full text-sm font-medium transition-all"
+              className="px-5 py-2.5 rounded-full text-sm font-medium transition-all border-none cursor-pointer disabled:cursor-not-allowed"
               style={{
+                minHeight: 44,
                 backgroundColor: activeDay === days.length - 1 ? 'rgba(0,0,0,0.05)' : '#1B2A4A',
-                color: activeDay === days.length - 1 ? 'rgba(0,0,0,0.3)' : 'white',
+                color: activeDay === days.length - 1 ? 'rgba(0,0,0,0.45)' : 'white',
               }}
             >
               Next Day →
