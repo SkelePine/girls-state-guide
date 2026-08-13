@@ -39,14 +39,48 @@ export default function WhatsNext() {
     { task: 'Add Girls State to your college application activities list', link: null },
     { task: 'Apply for GSAF Scholarships ($4,000/year available to alumnae)', link: 'https://www.cagsaf.org' },
     { task: 'Apply for GSAF Internships (paid media or operations internships)', link: 'https://www.cagsaf.org' },
-    { task: 'Join the alumnae Facebook and LinkedIn groups', link: null },
+    { task: 'Join the GSAF alumnae network on LinkedIn', link: 'https://www.linkedin.com/company/cagsaf' },
     { task: 'Consider joining the American Legion Auxiliary if eligible', link: 'https://calegionaux.org' },
   ]
 
   const longTerm = [
-    { icon: '🎓', title: 'Volunteer as a Counselor', desc: 'Must be 20+ or 3 years post-high school. Email ALACAGSChief@gmail.com to express interest.' },
+    {
+      icon: '🎓',
+      title: 'Volunteer as a Counselor',
+      desc: (
+        <>
+          Must be 20+ or 3 years post-high school. Email{' '}
+          <a
+            href="mailto:ALACAGSChief@gmail.com"
+            className="text-gold-on-cream font-medium"
+            style={{ textDecoration: 'underline' }}
+          >
+            ALACAGSChief@gmail.com
+          </a>{' '}
+          to express interest.
+        </>
+      ),
+    },
     { icon: '💛', title: 'Donate', desc: 'It costs ~$575 to send one delegate. Help future delegates attend by donating to your local ALA unit or GSAF.' },
-    { icon: '🔗', title: 'Stay Connected', desc: 'Join the GSAF alumnae network on Facebook and LinkedIn. The connections you made this week can last a lifetime.' },
+    {
+      icon: '🔗',
+      title: 'Stay Connected',
+      desc: (
+        <>
+          Join the GSAF alumnae network on{' '}
+          <a
+            href="https://www.linkedin.com/company/cagsaf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold-on-cream font-medium"
+            style={{ textDecoration: 'underline' }}
+          >
+            LinkedIn
+          </a>
+          . The connections you made this week can last a lifetime.
+        </>
+      ),
+    },
     { icon: '📣', title: 'Spread the Word', desc: 'Go back to your high school and tell people about Girls State. You were one delegate per school — help the next one get selected.' },
   ]
 
@@ -55,7 +89,7 @@ export default function WhatsNext() {
       <section id="next" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               Looking Ahead
             </p>
             <h2
@@ -193,7 +227,7 @@ export default function WhatsNext() {
               </p>
 
               <div className="mb-12">
-                <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+                <p className="text-xs uppercase tracking-widest mb-6 text-gold-on-cream">
                   Right After — Do These First
                 </p>
                 <StaggerContainer className="space-y-3">
@@ -228,7 +262,7 @@ export default function WhatsNext() {
               </div>
 
               <div className="mb-12">
-                <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+                <p className="text-xs uppercase tracking-widest mb-6 text-gold-on-cream">
                   Within the Month
                 </p>
                 <StaggerContainer className="space-y-3">
@@ -279,7 +313,7 @@ export default function WhatsNext() {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+                <p className="text-xs uppercase tracking-widest mb-6 text-gold-on-cream">
                   Long Term — Pay It Forward
                 </p>
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -296,7 +330,7 @@ export default function WhatsNext() {
                       >
                         {item.title}
                       </h4>
-                      <p style={{ color: '#2D2D2D', opacity: 0.7 }} className="text-sm leading-relaxed">
+                      <p className="text-sm leading-relaxed text-muted-on-cream">
                         {item.desc}
                       </p>
                     </StaggerItem>

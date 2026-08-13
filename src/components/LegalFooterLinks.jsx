@@ -6,10 +6,6 @@ const year = new Date().getFullYear()
 
 /** Legal + contact strip used on the guide footer and every legal page. */
 export default function LegalFooterLinks({ className = '' }) {
-  const contactHref = siteConfig.contactEmail
-    ? `mailto:${siteConfig.contactEmail}`
-    : '/#footer-share'
-
   return (
     <div className={className}>
       <nav
@@ -43,21 +39,12 @@ export default function LegalFooterLinks({ className = '' }) {
         <span aria-hidden="true" className="text-muted-on-navy self-center">
           ·
         </span>
-        {siteConfig.contactEmail ? (
-          <a
-            href={contactHref}
-            style={{ color: '#C9A84C', textDecoration: 'none', minHeight: 44, display: 'inline-flex', alignItems: 'center' }}
-          >
-            Contact
-          </a>
-        ) : (
-          <Link
-            to={contactHref}
-            style={{ color: '#C9A84C', textDecoration: 'none', minHeight: 44, display: 'inline-flex', alignItems: 'center' }}
-          >
-            Contact
-          </Link>
-        )}
+        <a
+          href={`mailto:${siteConfig.contactEmail}`}
+          style={{ color: '#C9A84C', textDecoration: 'none', minHeight: 44, display: 'inline-flex', alignItems: 'center' }}
+        >
+          {siteConfig.contactEmail}
+        </a>
         <span aria-hidden="true" className="text-muted-on-navy self-center">
           ·
         </span>

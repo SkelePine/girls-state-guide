@@ -1,14 +1,10 @@
 import LegalLayout from './LegalLayout'
 import { Link } from 'react-router-dom'
-import { siteConfig } from '../siteConfig'
+import { siteConfig, pageMeta } from '../siteConfig'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function CookiePolicy() {
-  usePageMeta({
-    title: 'Cookie Policy — CA Girls State Guide',
-    description:
-      'How the CA Girls State Guide uses essential browser storage and optional non-essential cookies. Accept or decline anytime.',
-  })
+  usePageMeta(pageMeta.cookies)
 
   return (
     <LegalLayout title="Cookie Policy" eyebrow="Cookies & Storage">

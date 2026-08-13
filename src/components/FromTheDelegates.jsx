@@ -34,7 +34,7 @@ export default function FromTheDelegates() {
       <section id="delegates" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               Real Experience
             </p>
             <h2
@@ -108,7 +108,7 @@ export default function FromTheDelegates() {
                   className="card-hover p-6 rounded-2xl"
                   style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '4px solid #C9A84C' }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+                  <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
                     On Running for Multiple Offices
                   </p>
                   <p
@@ -126,7 +126,7 @@ export default function FromTheDelegates() {
                   className="card-hover p-6 rounded-2xl"
                   style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '4px solid #1B2A4A' }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+                  <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
                     On Making Community
                   </p>
                   <p
@@ -144,7 +144,7 @@ export default function FromTheDelegates() {
                   className="card-hover p-6 rounded-2xl"
                   style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '4px solid #C9A84C' }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+                  <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
                     On Being Nervous
                   </p>
                   <p
@@ -162,7 +162,7 @@ export default function FromTheDelegates() {
                   className="card-hover p-6 rounded-2xl"
                   style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '4px solid #1B2A4A' }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+                  <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
                     On Showing Up
                   </p>
                   <p
@@ -183,7 +183,7 @@ export default function FromTheDelegates() {
                   style={{ background: 'linear-gradient(90deg, transparent, #C9A84C, transparent)' }}
                   aria-hidden="true"
                 />
-                <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+                <p className="text-xs uppercase tracking-widest mb-6 text-gold-on-cream">
                   What We&apos;d Tell Our Pre-Girls State Selves
                 </p>
                 <p
@@ -250,7 +250,7 @@ export default function FromTheDelegates() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 <div className="card-hover rounded-2xl p-8" style={{ backgroundColor: '#1B2A4A' }}>
-                  <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+                  <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
                     Supreme Court
                   </p>
                   <p
@@ -267,7 +267,7 @@ export default function FromTheDelegates() {
                   className="card-hover rounded-2xl p-8"
                   style={{ backgroundColor: 'white', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
                 >
-                  <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+                  <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
                     Oratorical Contest Winner
                   </p>
                   <p
@@ -283,7 +283,7 @@ export default function FromTheDelegates() {
                 className="rounded-2xl p-8 mb-12"
                 style={{ backgroundColor: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.35)' }}
               >
-                <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+                <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
                   Pre-Registration Spotlight
                 </p>
                 <p className="text-sm leading-relaxed mb-3" style={{ color: '#1B2A4A' }}>

@@ -186,7 +186,7 @@ export default function PrepareToGo() {
       <section id="prepare" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 no-print">
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               Before You Leave
             </p>
             <h2

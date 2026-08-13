@@ -130,7 +130,7 @@ export default function WeekTimeline() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+          <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
             Day by Day
           </p>
           <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}

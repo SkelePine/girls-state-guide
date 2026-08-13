@@ -58,7 +58,7 @@ export default function RunningForOffice() {
             ))}
           </div>
           <div className="mt-4 p-5 rounded-xl" style={{ backgroundColor: '#1B2A4A' }}>
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>Sentence Starters</p>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">Sentence Starters</p>
             {[
               '"I believe that [value] is the foundation of great leadership, and that\'s exactly why I\'m running for..."',
               '"Leadership isn\'t about a title. It\'s about [specific thing]. And that\'s what I\'m here to do."',
@@ -126,7 +126,7 @@ export default function RunningForOffice() {
       content: (
         <div className="space-y-4 text-base leading-relaxed">
           <div>
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               By Level — Posters &amp; Fundraising
             </p>
             <div className="grid grid-cols-1 gap-2">
@@ -223,7 +223,7 @@ export default function RunningForOffice() {
       <section id="runforoffice" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               Your Playbook
             </p>
             <h2

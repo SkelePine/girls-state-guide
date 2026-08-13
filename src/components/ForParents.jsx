@@ -85,7 +85,7 @@ export default function ForParents() {
       <section id="parents" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               Family Guide
             </p>
             <h2
@@ -220,7 +220,7 @@ export default function ForParents() {
           </div>
 
           <div className="rounded-2xl p-8 mb-12" style={{ backgroundColor: '#1B2A4A' }}>
-            <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-6 text-gold-on-cream">
               How to Support Her Before She Goes
             </p>
             <StaggerContainer className="space-y-3">
@@ -241,7 +241,7 @@ export default function ForParents() {
           </div>
 
           <div className="text-center">
-            <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-6 text-gold-on-cream">
               Key Links for Parents
             </p>
             <StaggerContainer className="flex flex-wrap justify-center gap-3">

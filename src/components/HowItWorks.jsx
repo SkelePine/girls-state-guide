@@ -49,7 +49,7 @@ export default function HowItWorks() {
   
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               The Structure
             </p>
             <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }}

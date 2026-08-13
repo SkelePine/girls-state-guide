@@ -3,6 +3,7 @@ import GuidePage from './pages/GuidePage'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import CookiePolicy from './pages/CookiePolicy'
+import NotFound from './pages/NotFound'
 import CookieConsent from './components/CookieConsent'
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/cookies" element={<CookiePolicy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieConsent />
     </BrowserRouter>

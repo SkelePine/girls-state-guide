@@ -1,14 +1,10 @@
 import { Link } from 'react-router-dom'
 import LegalLayout from './LegalLayout'
-import { siteConfig } from '../siteConfig'
+import { siteConfig, pageMeta } from '../siteConfig'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function TermsOfService() {
-  usePageMeta({
-    title: 'Terms of Service — CA Girls State Guide',
-    description:
-      'Terms for using the unofficial CA Girls State Guide: not ALA-affiliated, no warranties, acceptable use, and California governing law.',
-  })
+  usePageMeta(pageMeta.terms)
 
   return (
     <LegalLayout title="Terms of Service" eyebrow="Using This Guide">

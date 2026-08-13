@@ -179,8 +179,7 @@ export default function Footer() {
               Share your story
             </h2>
             <p className="text-sm leading-relaxed mb-4 text-center text-muted-on-navy">
-              Are you a Girls State alumna? Share your story with future delegates. Submissions are sent securely over
-              HTTPS to Formspree for the site operator to review.
+              Are you a Girls State alumna? Share your story with future delegates.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
               <div>

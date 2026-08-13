@@ -1,24 +1,10 @@
 import { Link } from 'react-router-dom'
 import LegalLayout from './LegalLayout'
-import { siteConfig } from '../siteConfig'
+import { siteConfig, pageMeta } from '../siteConfig'
 import { usePageMeta } from '../hooks/usePageMeta'
 
 export default function PrivacyPolicy() {
-  usePageMeta({
-    title: 'Privacy Policy — CA Girls State Guide',
-    description:
-      'What the CA Girls State Guide collects (story form, checklists), who can see it, how to request deletion, and GDPR/CCPA rights.',
-  })
-
-  const contactBlock = siteConfig.contactEmail ? (
-    <a href={`mailto:${siteConfig.contactEmail}`} className="text-gold-on-cream">
-      {siteConfig.contactEmail}
-    </a>
-  ) : (
-    <Link to="/#footer-share" className="text-gold-on-cream">
-      Contact form on the homepage
-    </Link>
-  )
+  usePageMeta(pageMeta.privacy)
 
   return (
     <LegalLayout title="Privacy Policy" eyebrow="Your Privacy">
@@ -55,17 +41,23 @@ export default function PrivacyPolicy() {
           such as IP address, user agent, and request URLs to operate and secure the Site.
         </li>
       </ul>
-      <p>
-        We do not ask for payment card data on this Site. We do not sell personal information.
-      </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
-        How we use it
+        Why we collect it
       </h2>
       <p>
         We use story submissions to read your experience, respond if needed, and — only if you answered “yes” to the
         publish permission question — consider featuring your words on the guide. Checklist storage exists only so your
         progress persists on the same browser. Hosting logs keep the Site reliable and secure.
+      </p>
+
+      <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
+        How long we keep it
+      </h2>
+      <p>
+        Form submissions are kept for up to <strong style={{ color: '#1B2A4A' }}>24 months</strong>, or until you ask us
+        to delete them, whichever comes first. After that we delete or anonymize them when no longer needed to operate
+        the guide. Checklist and cookie-choice data stay in your browser until you clear site data.
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
@@ -82,8 +74,8 @@ export default function PrivacyPolicy() {
           operate the guide. We do not publish your story unless you gave permission.
         </li>
         <li>
-          <strong style={{ color: '#1B2A4A' }}>Google Forms:</strong> if you use that link, Google and anyone you share
-          that form’s inbox with can see those responses.
+          <strong style={{ color: '#1B2A4A' }}>Google Forms:</strong> if you use that link, Google and anyone with access
+          to that form’s response inbox can see those responses.
         </li>
         <li>
           <strong style={{ color: '#1B2A4A' }}>Vercel:</strong> may process access logs; they do not receive your story
@@ -99,13 +91,28 @@ export default function PrivacyPolicy() {
         Processors / third parties
       </h2>
       <ul className="list-disc pl-5 space-y-2">
-        <li>Formspree — form delivery</li>
-        <li>Google Forms — optional longer questionnaire</li>
-        <li>Vercel — hosting and logs</li>
-        <li>Self-hosted fonts (Inter, Playfair Display) — no Google Fonts request</li>
+        <li>
+          <strong style={{ color: '#1B2A4A' }}>Formspree</strong> — processor for footer form submissions
+        </li>
+        <li>
+          <strong style={{ color: '#1B2A4A' }}>Google Forms</strong> — optional longer story questionnaire
+        </li>
+        <li>
+          <strong style={{ color: '#1B2A4A' }}>Vercel</strong> — hosting provider that may process access logs
+        </li>
+        <li>
+          <strong style={{ color: '#1B2A4A' }}>Fonts:</strong> Inter and Playfair Display are self-hosted with this Site
+          and are <strong style={{ color: '#1B2A4A' }}>not</strong> loaded from Google Fonts
+        </li>
       </ul>
+
+      <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
+        Sale of data, advertising cookies, and trackers
+      </h2>
       <p>
-        Details on cookies and storage: see our{' '}
+        We do <strong style={{ color: '#1B2A4A' }}>not</strong> sell personal data. We do{' '}
+        <strong style={{ color: '#1B2A4A' }}>not</strong> use advertising cookies or third-party ad trackers. Optional
+        analytics would load only after you Accept non-essential cookies (none are loaded today). See our{' '}
         <Link to="/cookies" className="text-gold-on-cream">
           Cookie Policy
         </Link>
@@ -116,10 +123,17 @@ export default function PrivacyPolicy() {
         How to request deletion or access
       </h2>
       <p>
-        Email or message us via {contactBlock} and tell us you want your form data accessed, corrected, or deleted.
-        Include the email address you used on the form so we can find your submission. We will respond within a
-        reasonable time (typically within 30 days). Clearing your browser storage removes checklist and cookie-choice
-        data on that device immediately.
+        Email us at{' '}
+        <a href={`mailto:${siteConfig.contactEmail}`} className="text-gold-on-cream">
+          {siteConfig.contactEmail}
+        </a>{' '}
+        (or use the{' '}
+        <Link to="/#footer-share" className="text-gold-on-cream">
+          contact form
+        </Link>
+        ) and tell us you want your form data accessed, corrected, or deleted. Include the email address you used on the
+        form so we can find your submission. We will respond within a reasonable time (typically within 30 days).
+        Clearing your browser storage removes checklist and cookie-choice data on that device immediately.
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
@@ -144,11 +158,11 @@ export default function PrivacyPolicy() {
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
-        Retention &amp; security
+        Security
       </h2>
       <p>
-        Form submissions are retained as needed to operate the guide, then deleted or archived when no longer needed.
-        Transmission uses HTTPS. No method of transmission or storage is 100% secure.
+        Transmission uses HTTPS. No method of transmission or storage is 100% secure. We sanitize form text before it
+        leaves your browser and avoid storing sensitive credentials in the Site’s frontend code.
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
@@ -164,7 +178,15 @@ export default function PrivacyPolicy() {
         Contact
       </h2>
       <p>
-        Privacy questions: {contactBlock}, addressed to {siteConfig.author}.
+        Privacy questions:{' '}
+        <a href={`mailto:${siteConfig.contactEmail}`} className="text-gold-on-cream">
+          {siteConfig.contactEmail}
+        </a>
+        , addressed to {siteConfig.author}. You can also use the{' '}
+        <Link to="/#footer-share" className="text-gold-on-cream">
+          homepage contact form
+        </Link>
+        .
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">

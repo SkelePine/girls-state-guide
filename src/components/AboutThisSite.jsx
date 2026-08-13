@@ -27,7 +27,7 @@ export default function AboutThisSite() {
       <section id="about" style={{ backgroundColor: '#FAF7F2' }} className="py-24 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#C9A84C' }}>
+            <p className="text-xs uppercase tracking-widest mb-3 text-gold-on-cream">
               Start Here
             </p>
             <h2
@@ -39,7 +39,7 @@ export default function AboutThisSite() {
             <p className="text-muted-on-cream text-base leading-relaxed max-w-xl mx-auto">
               Everything the acceptance letter didn&apos;t cover — organized so you can find what you need fast.
             </p>
-            <p style={{ color: '#2D2D2D', opacity: 0.55 }} className="text-xs mt-3 tracking-wide">
+            <p className="text-xs mt-3 tracking-wide text-muted-on-cream">
               {siteConfig.author} · {siteConfig.authorRole}
             </p>
             <button
