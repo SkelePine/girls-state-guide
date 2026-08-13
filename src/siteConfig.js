@@ -11,7 +11,7 @@ export const siteConfig = {
   verifiedYear: 2026,
   sessionLabel: '83rd Session',
   campus2026: 'University of California, Riverside (UCR)',
-  siteUrl: import.meta.env.VITE_SITE_URL || 'https://cagirlsstateguide.example.com',
+  siteUrl: import.meta.env.VITE_SITE_URL || 'https://girlsstateultimateguide.com',
   contactEmail: import.meta.env.VITE_CONTACT_EMAIL || '',
   formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || '',
   googleFormUrl:
