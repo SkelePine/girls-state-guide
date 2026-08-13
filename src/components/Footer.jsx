@@ -166,7 +166,7 @@ export default function Footer() {
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="A short note about your experience (optional)"
+                placeholder="A short note about your experience"
                 aria-label="Message"
                 rows={3}
                 className="w-full px-4 py-3 rounded-lg text-sm border-none outline-none resize-y"

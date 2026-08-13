@@ -16,7 +16,7 @@ export const siteConfig = {
   formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || '',
   googleFormUrl:
     import.meta.env.VITE_GOOGLE_FORM_URL ||
-    'https://docs.google.com/forms/d/e/1FAIpQLSf_PLACEHOLDER_REPLACE_ME/viewform',
+    'https://forms.gle/r1npFtyzztRLExZM7',
 }
 
 export const yearNote = `Verified for ${siteConfig.verifiedYear} — always confirm dates, campus, and deadlines with your ALA unit for your year.`

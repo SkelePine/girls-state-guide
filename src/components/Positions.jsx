@@ -30,8 +30,8 @@ export default function Positions() {
     city: {
       elected: [
         {
-          title: 'City Council Member (5)',
-          desc: 'Governing body of the city. Council members elect the Mayor from among themselves.',
+          title: 'City Council Member',
+          desc: 'Governing body of the city (5 elected). Council members elect the Mayor from among themselves.',
           bestFor: 'Leaders, collaborators',
           speech: '30 seconds',
           signatures: '3–5 signatures',
@@ -75,12 +75,12 @@ export default function Positions() {
           tip: 'If you love policy and debate, this is one of the best roles. You\'ll be writing and arguing real legislation all week.',
         },
         {
-          title: 'Assemblymember (2)',
-          desc: 'Represents your city in the State Assembly.',
+          title: 'Assembly Member',
+          desc: 'Represents your city in the State Assembly (2 elected per city).',
           bestFor: 'Debaters, policy writers',
           speech: '30 sec (primary) · 1 min (general)',
           signatures: '3–5 from your city only',
-          details: 'Two Assemblymembers are elected from each city, making 32 total in the Girls State Assembly. The Assembly is presided over by the Speaker of the House. Like Senators, Assemblymembers debate and vote on bills. Two spots per city means better odds than a Senate seat.',
+          details: 'Two Assembly Members are elected from each city, making 32 total in the Girls State Assembly. The Assembly is presided over by the Speaker of the House. Like Senators, Assembly Members debate and vote on bills. Two spots per city means better odds than a Senate seat.',
           tip: 'Running for Assembly is a great way to get into the legislature. Two spots per city means better odds than Senate.',
         },
         {
@@ -315,9 +315,9 @@ export default function Positions() {
       },
       {
         title: 'Speaker of the House',
-        desc: 'Elected by Assemblymembers at first meeting. Presides over the Assembly.',
-        details: 'The Speaker is elected by the 32 Assemblymembers at their first meeting and presides over all Assembly sessions. This is the top leadership role in the Assembly.',
-        tip: 'Build relationships with fellow Assemblymembers from Day 1 — they elect the Speaker.',
+        desc: 'Elected by Assembly Members at first meeting. Presides over the Assembly.',
+        details: 'The Speaker is elected by the 32 Assembly Members at their first meeting and presides over all Assembly sessions. This is the top leadership role in the Assembly.',
+        tip: 'Build relationships with fellow Assembly Members from Day 1 — they elect the Speaker.',
       },
       {
         title: 'Majority Floor Leader',
@@ -683,12 +683,14 @@ export default function Positions() {
   const PositionCard = ({ pos, id, showFee = false }) => {
     const isExpanded = expandedCard === id
     return (
-      <div className="card-hover rounded-xl overflow-hidden transition-all duration-200"
-           style={{
-             backgroundColor: isExpanded ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.06)',
-             border: `1px solid ${isExpanded ? 'rgba(201,168,76,0.5)' : 'rgba(201,168,76,0.2)'}`,
-           }}>
-        <div className="p-5">
+      <div
+        className="card-hover rounded-xl overflow-hidden transition-all duration-200 h-full flex flex-col"
+        style={{
+          backgroundColor: isExpanded ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.06)',
+          border: `1px solid ${isExpanded ? 'rgba(201,168,76,0.5)' : 'rgba(201,168,76,0.2)'}`,
+        }}
+      >
+        <div className="p-5 flex flex-col flex-1">
           <div className="flex justify-between items-start mb-1">
             <h3 style={{ color: '#C9A84C', fontFamily: '"Playfair Display", serif' }} className="font-bold text-sm">{pos.title}</h3>
             {showFee && pos.fee && (
@@ -713,7 +715,7 @@ export default function Positions() {
           <button
             type="button"
             onClick={() => toggleCard(id)}
-            className="text-xs font-medium transition-all duration-200 bg-transparent border-none cursor-pointer px-0"
+            className="text-xs font-medium transition-all duration-200 bg-transparent border-none cursor-pointer px-0 mt-auto self-start"
             style={{ color: '#C9A84C', minHeight: 44 }}
           >
             {isExpanded ? 'Show Less ↑' : 'Learn More →'}
@@ -789,7 +791,7 @@ export default function Positions() {
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {positions.city.elected.map((pos, i) => (
-                <StaggerItem key={pos.title}>
+                <StaggerItem key={pos.title} className="h-full">
                   <PositionCard pos={pos} id={`city-${i}`} />
                 </StaggerItem>
               ))}
@@ -813,7 +815,7 @@ export default function Positions() {
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {positions.county.elected.map((pos, i) => (
-                <StaggerItem key={pos.title}>
+                <StaggerItem key={pos.title} className="h-full">
                   <PositionCard pos={pos} id={`county-${i}`} />
                 </StaggerItem>
               ))}
@@ -838,7 +840,7 @@ export default function Positions() {
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {positions.state.partisan.map((pos, i) => (
-                  <StaggerItem key={pos.title}>
+                  <StaggerItem key={pos.title} className="h-full">
                     <PositionCard pos={pos} id={`state-p-${i}`} showFee={true} />
                   </StaggerItem>
                 ))}
@@ -850,7 +852,7 @@ export default function Positions() {
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {positions.state.nonPartisan.map((pos, i) => (
-                  <StaggerItem key={pos.title}>
+                  <StaggerItem key={pos.title} className="h-full">
                     <PositionCard pos={pos} id={`state-np-${i}`} showFee={true} />
                   </StaggerItem>
                 ))}
@@ -862,11 +864,11 @@ export default function Positions() {
         {activeTab === 'legislative' && (
           <div>
             <p className="text-white opacity-60 text-sm leading-relaxed mb-6 text-center">
-              The Legislature has 16 Senators (1 per city) and 32 Assemblymembers (2 per city). Click any role to learn more.
+              The Legislature has 16 Senators (1 per city) and 32 Assembly Members (2 per city). Click any role to learn more.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {positions.legislative.map((pos, i) => (
-                <StaggerItem key={pos.title}>
+                <StaggerItem key={pos.title} className="h-full">
                   <PositionCard pos={pos} id={`leg-${i}`} />
                 </StaggerItem>
               ))}
@@ -895,7 +897,7 @@ export default function Positions() {
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {positions.governor.staff.map((pos, i) => (
-                  <StaggerItem key={pos.title}>
+                  <StaggerItem key={pos.title} className="h-full">
                     <PositionCard pos={pos} id={`gov-staff-${i}`} />
                   </StaggerItem>
                 ))}
@@ -908,7 +910,7 @@ export default function Positions() {
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
                 {positions.governor.ceremonial.map((pos, i) => (
-                  <StaggerItem key={pos.title}>
+                  <StaggerItem key={pos.title} className="h-full">
                     <PositionCard pos={pos} id={`gov-cer-${i}`} />
                   </StaggerItem>
                 ))}

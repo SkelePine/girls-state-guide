@@ -18,7 +18,7 @@ export default function RunningForOffice() {
               { type: 'Speaker / Debater', go: 'Governor, AG, District Attorney' },
               { type: 'Organizer', go: 'City Clerk, Secretary of State' },
               { type: 'Community Builder', go: 'Mayor, Commissioner of Inspiration' },
-              { type: 'Policy Writer', go: 'Platform Committee, Assemblymember' },
+              { type: 'Policy Writer', go: 'Platform Committee, Assembly Member' },
             ].map((item) => (
               <div
                 key={item.type}
