@@ -165,7 +165,7 @@ export default function WritingYourBill() {
                 <span style={{ color: '#C9A84C' }} className="mt-0.5">✓</span>
                 <div>
                   <p className="text-white text-sm font-medium">{bill.name}</p>
-                  <p className="text-white opacity-40 text-xs">{bill.delegate} · City of {bill.city}</p>
+                  <p className="text-muted-on-navy text-xs">{bill.delegate} · City of {bill.city}</p>
                 </div>
               </StaggerItem>
             ))}

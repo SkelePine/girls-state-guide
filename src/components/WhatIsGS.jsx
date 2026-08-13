@@ -114,7 +114,7 @@ export default function WhatIsGS() {
             >
               What Is Girls State?
             </h2>
-            <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
+            <p className="text-muted-on-navy text-sm leading-relaxed max-w-xl mx-auto">
               Everything the acceptance letter didn&apos;t tell you.
             </p>
           </div>

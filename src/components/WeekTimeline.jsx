@@ -154,7 +154,10 @@ export default function WeekTimeline() {
               key={day.label}
               type="button"
               role="tab"
+              id={`week-tab-${index}`}
+              aria-controls={`week-panel-${index}`}
               aria-selected={activeDay === index}
+              tabIndex={activeDay === index ? 0 : -1}
               onClick={() => setActiveDay(index)}
               className="flex-shrink-0 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border-none cursor-pointer whitespace-nowrap"
               style={{
@@ -170,7 +173,12 @@ export default function WeekTimeline() {
         </div>
 
         {/* Active Day Content */}
-        <div className="max-w-3xl mx-auto">
+        <div
+          className="max-w-3xl mx-auto"
+          role="tabpanel"
+          id={`week-panel-${activeDay}`}
+          aria-labelledby={`week-tab-${activeDay}`}
+        >
           <div className="card-hover rounded-2xl overflow-hidden"
                style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}>
 

@@ -274,7 +274,7 @@ export default function PrepareToGo() {
               {/* Print-only header */}
               <div className="print-only print-packing-header">
                 <p className="print-logo">CA Girls State Guide</p>
-                <h1 className="print-title">The Ultimate Packing List</h1>
+                <h2 className="print-title">The Ultimate Packing List</h2>
                 <p className="print-subtitle">
                   Check off items as you pack · {checkedCount}/{totalItems} complete
                 </p>
@@ -298,7 +298,10 @@ export default function PrepareToGo() {
                       }}
                       type="button"
                       role="tab"
+                      id={`packing-tab-${cat.id}`}
+                      aria-controls={`packing-panel-${cat.id}`}
                       aria-selected={isActive}
+                      tabIndex={isActive ? 0 : -1}
                       onClick={() => selectCategory(cat.id)}
                       className="flex-shrink-0 px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border-none whitespace-nowrap"
                       style={{
@@ -335,6 +338,9 @@ export default function PrepareToGo() {
                   border: '1px solid rgba(27,42,74,0.06)',
                 }}
                 key={activeCategory}
+                role="tabpanel"
+                id={`packing-panel-${activeCategory}`}
+                aria-labelledby={`packing-tab-${activeCategory}`}
               >
                 {activeItems.map((item, index) => {
                   const key = `${activeCategory}-${index}`
@@ -531,7 +537,7 @@ export default function PrepareToGo() {
                     >
                       {tip.title}
                     </h4>
-                    <p className="text-white opacity-60 text-xs leading-relaxed">{tip.desc}</p>
+                    <p className="text-muted-on-navy text-xs leading-relaxed">{tip.desc}</p>
                   </StaggerItem>
                 ))}
               </StaggerContainer>

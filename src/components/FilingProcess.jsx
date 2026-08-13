@@ -84,7 +84,7 @@ export default function FilingProcess() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             The State Filing Process
           </h2>
-          <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
+          <p className="text-muted-on-navy text-sm leading-relaxed max-w-xl mx-auto">
             Running for a state office is a whole process — and it starts before you even campaign. Here's exactly how it works.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function FilingProcess() {
                 <IconBadge size="md" variant="light">{person.hat}</IconBadge>
                 <div>
                   <p style={{ color: '#C9A84C' }} className="font-semibold text-sm">{person.role}</p>
-                  <p className="text-white opacity-60 text-xs mt-1">{person.desc}</p>
+                  <p className="text-muted-on-navy text-xs mt-1">{person.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -134,7 +134,7 @@ export default function FilingProcess() {
                 </button>
                 {openItem === index && (
                   <div className="px-5 pb-5" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
-                    <p className="text-white opacity-65 text-sm leading-relaxed pt-3">{form.desc}</p>
+                    <p className="text-muted-on-navy text-sm leading-relaxed pt-3">{form.desc}</p>
                   </div>
                 )}
               </StaggerItem>
@@ -181,7 +181,7 @@ export default function FilingProcess() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-          <p className="text-center text-xs mt-4 text-white opacity-40">
+          <p className="text-center text-xs mt-4 text-muted-on-navy">
             Start fundraising at breakfast the morning after state filing is announced. Max $25 per contributor.
           </p>
         </div>
@@ -202,7 +202,7 @@ export default function FilingProcess() {
               'Do NOT sign Form #5 until you are with a Green Hat Notary',
               'Only pay your filing fee once, in your HOME county',
             ].map((tip) => (
-              <StaggerItem key={tip} className="flex items-start gap-2 text-xs text-white opacity-65">
+              <StaggerItem key={tip} className="flex items-start gap-2 text-xs text-muted-on-navy">
                 <span style={{ color: '#C9A84C' }}>✓</span> {tip}
               </StaggerItem>
             ))}
@@ -219,7 +219,7 @@ export default function FilingProcess() {
           >
             Girls State Bank Account and Currency
           </h3>
-          <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto text-center mb-8">
+          <p className="text-muted-on-navy text-sm leading-relaxed max-w-xl mx-auto text-center mb-8">
             Your Girls State bank account powers filing fees, donations, and campaign materials.
           </p>
 
@@ -299,7 +299,7 @@ export default function FilingProcess() {
           >
             Write-In Candidates
           </h3>
-          <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto text-center mb-8">
+          <p className="text-muted-on-navy text-sm leading-relaxed max-w-xl mx-auto text-center mb-8">
             Not on the ballot yet? You can still run. Write-in candidacy is a real opportunity.
           </p>
 

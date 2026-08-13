@@ -275,6 +275,7 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
+        aria-label="Primary"
         className="sticky top-0 z-50 w-full transition-all duration-300 relative"
         style={{
           backgroundColor: '#1B2A4A',

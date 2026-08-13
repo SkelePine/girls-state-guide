@@ -27,12 +27,12 @@ export default function FadeInSection({ children, className, style }) {
   )
 }
 
-export function StaggerContainer({ children, className, style }) {
+export function StaggerContainer({ children, className, style, ...props }) {
   const reduce = useReducedMotion()
 
   if (reduce) {
     return (
-      <div className={className} style={style}>
+      <div className={className} style={style} {...props}>
         {children}
       </div>
     )
@@ -49,6 +49,7 @@ export function StaggerContainer({ children, className, style }) {
         hidden: {},
         visible: { transition: { staggerChildren: 0.1 } },
       }}
+      {...props}
     >
       {children}
     </motion.div>

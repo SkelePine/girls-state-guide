@@ -110,6 +110,8 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between p-6 text-left transition-all"
                 style={{ backgroundColor: openItem === index ? '#1B2A4A' : 'white' }}
                 aria-expanded={openItem === index}
+                aria-controls={`faq-panel-${index}`}
+                id={`faq-trigger-${index}`}
               >
                 <span className="font-medium text-sm pr-4"
                       style={{ color: openItem === index ? 'white' : '#1B2A4A' }}>
@@ -120,7 +122,13 @@ export default function FAQ() {
                 </span>
               </button>
               {openItem === index && (
-                <div className="px-6 pb-6" style={{ backgroundColor: 'white' }}>
+                <div
+                  id={`faq-panel-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-trigger-${index}`}
+                  className="px-6 pb-6"
+                  style={{ backgroundColor: 'white' }}
+                >
                   <p className="text-base leading-relaxed pt-4 text-muted-on-cream">
                     {faq.a}
                   </p>
@@ -133,7 +141,7 @@ export default function FAQ() {
         {/* Disclaimer */}
         <div className="mt-12 p-6 rounded-2xl text-center"
              style={{ backgroundColor: 'rgba(27,42,74,0.05)', border: '1px solid rgba(27,42,74,0.1)' }}>
-          <p style={{ color: '#1B2A4A', opacity: 0.6 }} className="text-xs leading-relaxed">
+          <p className="text-xs leading-relaxed text-muted-on-cream">
             This is an unofficial guide built by {siteConfig.author}, {siteConfig.authorRole}. Not affiliated with the American Legion Auxiliary. Always verify current information with your ALA unit and the official website at{' '}
             <a href="https://www.cagirlsstate.org" target="_blank" rel="noopener noreferrer"
                style={{ color: '#C9A84C' }} className="underline">

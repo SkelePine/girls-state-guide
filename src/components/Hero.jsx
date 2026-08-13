@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useReducedMotion } from 'framer-motion'
 import DecorSparkles from './DecorSparkles'
 import { siteConfig } from '../siteConfig'
 import { jumpTo } from '../hooks/useHashTab'
@@ -17,10 +18,15 @@ const secondaryCtas = [
 ]
 
 /** Count-up that survives React Strict Mode remounts */
-function AnimatedStat({ from, to, suffix = '', delay = 0 }) {
-  const [display, setDisplay] = useState(from)
+function AnimatedStat({ from, to, suffix = '', delay = 0, reduceMotion = false }) {
+  const [display, setDisplay] = useState(reduceMotion ? to : from)
 
   useEffect(() => {
+    if (reduceMotion) {
+      setDisplay(to)
+      return undefined
+    }
+
     let frame = 0
     let startAt = null
     const duration = 2000
@@ -55,7 +61,7 @@ function AnimatedStat({ from, to, suffix = '', delay = 0 }) {
       cancelAnimationFrame(frame)
       window.clearTimeout(failSafe)
     }
-  }, [from, to, delay])
+  }, [from, to, delay, reduceMotion])
 
   return (
     <span>
@@ -76,6 +82,8 @@ function GoldDivider({ className = '' }) {
 }
 
 export default function Hero() {
+  const reduceMotion = useReducedMotion()
+
   return (
     <section className="hero-gradient relative flex flex-col items-center text-center px-4 sm:px-6 pt-8 pb-8 sm:pt-10 sm:pb-10 overflow-x-clip">
       <GoldDivider className="mb-4 relative z-10" />
@@ -149,6 +157,7 @@ export default function Hero() {
                 to={stat.to}
                 suffix={stat.suffix}
                 delay={0.15 + index * 0.1}
+                reduceMotion={!!reduceMotion}
               />
             </p>
             <p

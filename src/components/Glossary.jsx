@@ -1,6 +1,7 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
+import { useFocusTrap } from '../hooks/useFocusTrap'
 
 export const glossaryTerms = [
   { term: 'Blue Star Delegate', def: 'A delegate with an immediate family member currently serving in the U.S. military.' },
@@ -26,6 +27,8 @@ export const glossaryTerms = [
 
 export default function GlossaryModal({ open, onClose }) {
   const [query, setQuery] = useState('')
+  const dialogRef = useRef(null)
+  useFocusTrap(open, dialogRef)
 
   useEffect(() => {
     if (!open) {
@@ -70,6 +73,7 @@ export default function GlossaryModal({ open, onClose }) {
           />
 
           <motion.div
+            ref={dialogRef}
             role="dialog"
             aria-modal="true"
             aria-labelledby="glossary-title"
@@ -127,7 +131,7 @@ export default function GlossaryModal({ open, onClose }) {
 
             <div className="flex-1 overflow-y-auto px-6 pb-6 space-y-3" style={{ scrollbarWidth: 'thin' }}>
               {filtered.length === 0 ? (
-                <p className="text-sm text-white opacity-50 text-center py-8">No terms match your search.</p>
+                <p className="text-sm text-muted-on-navy text-center py-8">No terms match your search.</p>
               ) : (
                 filtered.map((item) => (
                   <div

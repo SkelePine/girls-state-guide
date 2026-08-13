@@ -168,13 +168,13 @@ export default function WhatsNext() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <p className="text-white font-semibold mb-2">Girls State</p>
-                    <p className="text-white opacity-60 text-sm leading-relaxed">
+                    <p className="text-muted-on-navy text-sm leading-relaxed">
                       One of 450 delegates selected from 556,000 California high school juniors — one per high school. Week-long civic leadership program simulating state government. Ran for office, wrote and debated legislation.
                     </p>
                   </div>
                   <div>
                     <p className="text-white font-semibold mb-2">Girls Nation ⭐</p>
-                    <p className="text-white opacity-60 text-sm leading-relaxed">
+                    <p className="text-muted-on-navy text-sm leading-relaxed">
                       One of 2 delegates selected from California (100 total nationally) to represent the state at ALA Girls Nation in Washington, D.C. Participated in national Senate sessions, visited the White House and Capitol Hill.
                     </p>
                   </div>
@@ -266,13 +266,13 @@ export default function WhatsNext() {
                   How to List It on College Applications
                 </p>
                 <div className="rounded-xl p-5" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
-                  <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-2">Activity Name</p>
+                  <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-2">Activity Name</p>
                   <p className="text-white font-medium mb-4">ALA California Girls State Delegate</p>
-                  <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-2">Description</p>
+                  <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-2">Description</p>
                   <p className="text-white opacity-75 text-sm leading-relaxed">
                     One of 450 delegates selected from 556,000 CA high school juniors (one per high school) for week-long civic leadership program at UC Riverside; simulated state government, ran for multiple offices, wrote and debated legislation.
                   </p>
-                  <p className="text-white opacity-40 text-xs mt-3 italic">
+                  <p className="text-muted-on-navy text-xs mt-3 italic">
                     Add your specific roles: Nationalist Party Keynote Speaker, City Commissioner, District Attorney candidate, etc.
                   </p>
                 </div>

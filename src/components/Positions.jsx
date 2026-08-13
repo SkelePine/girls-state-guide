@@ -698,7 +698,7 @@ export default function Positions() {
                     style={{ backgroundColor: 'rgba(201,168,76,0.3)' }}>G$ {pos.fee}</span>
             )}
           </div>
-          <p className="text-white opacity-65 text-xs mb-2">{pos.desc}</p>
+          <p className="text-muted-on-navy text-xs mb-2">{pos.desc}</p>
           <div className="flex flex-wrap gap-3 mb-3">
             {pos.bestFor && (
               <span className="text-xs" style={{ color: '#C9A84C', opacity: 0.7 }}>
@@ -706,10 +706,10 @@ export default function Positions() {
               </span>
             )}
             {pos.speech && (
-              <span className="text-xs text-white opacity-40">🎤 {pos.speech}</span>
+              <span className="text-xs text-muted-on-navy">🎤 {pos.speech}</span>
             )}
             {pos.signatures && (
-              <span className="text-xs text-white opacity-40">✍️ {pos.signatures}</span>
+              <span className="text-xs text-muted-on-navy">✍️ {pos.signatures}</span>
             )}
           </div>
           <button
@@ -751,7 +751,7 @@ export default function Positions() {
               className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Positions & Offices
           </h2>
-          <p className="text-white opacity-60 text-sm leading-relaxed max-w-xl mx-auto">
+          <p className="text-muted-on-navy text-sm leading-relaxed max-w-xl mx-auto">
             On Day 1, everyone runs for something. There are no spectators at Girls State. Click any position to learn more.
           </p>
         </div>
@@ -770,7 +770,10 @@ export default function Positions() {
               }}
               type="button"
               role="tab"
+              id={`positions-tab-${tab.id}`}
+              aria-controls={`positions-panel-${tab.id}`}
               aria-selected={activeTab === tab.id}
+              tabIndex={activeTab === tab.id ? 0 : -1}
               onClick={() => selectTab(tab.id)}
               className="flex-shrink-0 px-5 sm:px-6 rounded-full text-sm font-medium transition-all duration-200 border-none cursor-pointer whitespace-nowrap"
               style={{
@@ -784,9 +787,14 @@ export default function Positions() {
           ))}
         </div>
 
+        <div
+          role="tabpanel"
+          id={`positions-panel-${activeTab}`}
+          aria-labelledby={`positions-tab-${activeTab}`}
+        >
         {activeTab === 'city' && (
           <div>
-            <p className="text-white opacity-60 text-sm leading-relaxed mb-6 text-center">
+            <p className="text-muted-on-navy text-sm leading-relaxed mb-6 text-center">
               City offices are elected on Day 1. Your city (~30 people) is your home base all week. Requires 3–5 signatures.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -797,7 +805,7 @@ export default function Positions() {
               ))}
             </StaggerContainer>
             <div className="p-5 rounded-xl" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
-              <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-3">Appointed Positions — No Election Required</p>
+              <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-3">Appointed Positions — No Election Required</p>
               <StaggerContainer className="flex flex-wrap gap-2">
                 {positions.city.appointed.map((pos) => (
                   <StaggerItem key={pos} className="px-3 py-1 rounded-full text-xs text-white opacity-70"
@@ -810,7 +818,7 @@ export default function Positions() {
 
         {activeTab === 'county' && (
           <div>
-            <p className="text-white opacity-60 text-sm leading-relaxed mb-6 text-center">
+            <p className="text-muted-on-navy text-sm leading-relaxed mb-6 text-center">
               County elections happen mid-week. Requires 5–10 signatures. County officials represent a broader constituency.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -821,7 +829,7 @@ export default function Positions() {
               ))}
             </StaggerContainer>
             <div className="p-5 rounded-xl" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
-              <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-3">Appointed Positions — No Election Required</p>
+              <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-3">Appointed Positions — No Election Required</p>
               <StaggerContainer className="flex flex-wrap gap-2">
                 {positions.county.appointed.map((pos) => (
                   <StaggerItem key={pos} className="px-3 py-1 rounded-full text-xs text-white opacity-70"
@@ -835,7 +843,7 @@ export default function Positions() {
         {activeTab === 'state' && (
           <div>
             <div className="mb-8">
-              <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-4 text-center">
+              <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-4 text-center">
                 Partisan Offices — Must win party primary first · Requires 11–15 signatures from 2+ counties
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -847,7 +855,7 @@ export default function Positions() {
               </StaggerContainer>
             </div>
             <div className="mb-8">
-              <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-4 text-center">
+              <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-4 text-center">
                 Non-Partisan Offices — Both parties can sign nomination papers
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -863,7 +871,7 @@ export default function Positions() {
 
         {activeTab === 'legislative' && (
           <div>
-            <p className="text-white opacity-60 text-sm leading-relaxed mb-6 text-center">
+            <p className="text-muted-on-navy text-sm leading-relaxed mb-6 text-center">
               The Legislature has 16 Senators (1 per city) and 32 Assembly Members (2 per city). Click any role to learn more.
             </p>
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -884,15 +892,15 @@ export default function Positions() {
 
         {activeTab === 'governor' && (
           <div>
-            <p className="text-white opacity-60 text-sm leading-relaxed mb-2 text-center">
+            <p className="text-muted-on-navy text-sm leading-relaxed mb-2 text-center">
               You don't have to win an election to hold a meaningful position.
             </p>
-            <p className="text-white opacity-60 text-sm leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+            <p className="text-muted-on-navy text-sm leading-relaxed mb-8 text-center max-w-2xl mx-auto">
               The newly elected Governor appoints delegates to the following departments, agencies, boards and commissions before the close of the session. Submit a <strong className="text-white">letter of interest</strong> by the deadline on the daily schedule.
             </p>
 
             <div className="mb-10">
-              <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-4 text-center">
+              <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-4 text-center">
                 State-Level Appointed Staff Positions — Click to Learn More
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -905,7 +913,7 @@ export default function Positions() {
             </div>
 
             <div>
-              <p className="text-white opacity-50 text-xs uppercase tracking-widest mb-6 text-center">
+              <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-6 text-center">
                 Governor's Ceremonial Appointments — 42 Positions · Click Any to Learn More
               </p>
               <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
@@ -920,13 +928,14 @@ export default function Positions() {
                 <p className="text-sm font-medium mb-2" style={{ color: '#C9A84C' }}>
                   💡 How to Get a Ceremonial Appointment
                 </p>
-                <p className="text-white opacity-65 text-sm leading-relaxed">
+                <p className="text-muted-on-navy text-sm leading-relaxed">
                   Write a letter of interest to the Governor expressing which department or board you'd like to serve on and why. Submit it by the deadline on the daily schedule. You do not need to win an election — this is open to all delegates.
                 </p>
               </div>
             </div>
           </div>
         )}
+        </div>
 
       </div>
     </section>

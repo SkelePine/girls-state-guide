@@ -190,7 +190,7 @@ export default function TheExperience() {
                   >
                     For Introverts
                   </h3>
-                  <p className="text-white opacity-60 text-sm leading-relaxed mb-6">
+                  <p className="text-muted-on-navy text-sm leading-relaxed mb-6">
                     You don't have to be the loudest person in the room to make an impact.
                   </p>
                   <StaggerContainer className="space-y-3">
@@ -319,7 +319,7 @@ export default function TheExperience() {
                       {item.title}
                     </h3>
                     <p className="text-xs mb-3" style={{ color: '#C9A84C', opacity: 0.6 }}>{item.time}</p>
-                    <p className="text-white opacity-65 text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-muted-on-navy text-sm leading-relaxed">{item.desc}</p>
                   </StaggerItem>
                 ))}
               </StaggerContainer>

@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import FadeInSection, { StaggerContainer, StaggerItem } from './FadeInSection'
 import GlossaryModal from './Glossary'
+import { openPrivacyNotice } from './PrivacyNotice'
 import { siteConfig } from '../siteConfig'
 
 export default function Footer() {
@@ -68,10 +70,10 @@ export default function Footer() {
             CA Girls State Guide
           </p>
 
-          <p className="text-sm leading-relaxed mb-2 max-w-md mx-auto" style={{ color: 'rgba(255,255,255,0.78)' }}>
+          <p className="text-sm leading-relaxed mb-2 max-w-md mx-auto text-muted-on-navy">
             {siteConfig.byline}
           </p>
-          <p className="text-xs leading-relaxed mb-6 max-w-md mx-auto" style={{ color: 'rgba(255,255,255,0.65)' }}>
+          <p className="text-xs leading-relaxed mb-6 max-w-md mx-auto text-muted-on-navy">
             An unofficial guide. Not affiliated with the American Legion Auxiliary.
           </p>
 
@@ -87,8 +89,7 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm transition-opacity hover:opacity-100"
-                  style={{ color: 'rgba(255,255,255,0.72)' }}
+                  className="text-sm transition-opacity hover:opacity-100 text-muted-on-navy"
                 >
                   {link.label}
                 </a>
@@ -130,7 +131,7 @@ export default function Footer() {
           </div>
 
           <div className="max-w-md mx-auto mb-10 text-left" id="footer-share">
-            <p className="text-sm leading-relaxed mb-4 text-center" style={{ color: 'rgba(255,255,255,0.8)' }}>
+            <p className="text-sm leading-relaxed mb-4 text-center text-muted-on-navy">
               Are you a Girls State alumna? Share your story with future delegates.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -184,19 +185,21 @@ export default function Footer() {
               >
                 {status === 'sending' ? 'Sending…' : 'Share my story'}
               </button>
-              {status === 'sent' && (
-                <p className="text-xs text-center" style={{ color: '#C9A84C' }}>
-                  Thank you — your note is on its way.
-                </p>
-              )}
-              {status === 'error' && (
-                <p className="text-xs text-center" style={{ color: '#FCA5A5' }}>
-                  Something went wrong. Try the Google Form below.
-                </p>
-              )}
+              <div aria-live="polite" aria-atomic="true">
+                {status === 'sent' && (
+                  <p className="text-xs text-center" style={{ color: '#C9A84C' }}>
+                    Thank you — your note is on its way.
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p className="text-xs text-center" style={{ color: '#FCA5A5' }}>
+                    Something went wrong. Try the Google Form below.
+                  </p>
+                )}
+              </div>
             </form>
 
-            <p className="text-center text-xs mt-5" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            <p className="text-center text-xs mt-5 text-muted-on-navy">
               Prefer a form?{' '}
               <a
                 href={siteConfig.googleFormUrl}
@@ -211,7 +214,26 @@ export default function Footer() {
 
           <div style={{ backgroundColor: 'rgba(255,255,255,0.1)' }} className="w-full h-px mb-6" />
 
-          <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          <nav aria-label="Legal" className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-6 text-sm">
+            <Link to="/privacy" style={{ color: '#C9A84C', textDecoration: 'none', minHeight: 44, display: 'inline-flex', alignItems: 'center' }}>
+              Privacy
+            </Link>
+            <span aria-hidden="true" className="text-muted-on-navy self-center">·</span>
+            <Link to="/terms" style={{ color: '#C9A84C', textDecoration: 'none', minHeight: 44, display: 'inline-flex', alignItems: 'center' }}>
+              Terms
+            </Link>
+            <span aria-hidden="true" className="text-muted-on-navy self-center">·</span>
+            <button
+              type="button"
+              onClick={openPrivacyNotice}
+              className="bg-transparent border-none cursor-pointer text-sm"
+              style={{ color: '#C9A84C', minHeight: 44 }}
+            >
+              Privacy choices
+            </button>
+          </nav>
+
+          <p className="text-xs leading-relaxed text-muted-on-navy">
             © {year} CA Girls State Guide · {siteConfig.byline}
           </p>
         </div>

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
   scroll-behavior: smooth;
@@ -9,6 +8,34 @@ body {
   background-color: #FAF7F2;
   color: #2D2D2D;
   font-family: 'Inter', sans-serif;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background-color: #C9A84C;
+  color: #1B2A4A;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid #1B2A4A;
+  outline-offset: 2px;
+}
+
+.legal-prose a:hover {
+  text-decoration: underline;
+}
+
+.legal-prose h2 {
+  margin-top: 0.5rem;
 }
 
 @keyframes hero-radial-drift {

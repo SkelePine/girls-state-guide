@@ -62,7 +62,7 @@ export default function FromTheDelegates() {
                   <p className="text-xs uppercase tracking-widest mb-1" style={{ color: '#C9A84C' }}>
                     2026 Nationalist Party Keynote Address
                   </p>
-                  <p className="text-white opacity-60 text-sm">
+                  <p className="text-muted-on-navy text-sm">
                     Delivered at ALA California Girls State, 83rd Session · UC Riverside
                   </p>
                 </div>

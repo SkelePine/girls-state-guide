@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Search, X } from 'lucide-react'
 import { jumpTo } from '../hooks/useHashTab'
+import { useFocusTrap } from '../hooks/useFocusTrap'
 
 const SEARCH_INDEX = [
   { title: 'How to Apply', section: 'apply', tab: 'apply', keywords: 'eligibility ala unit samsung scholarship alternate' },
@@ -33,6 +34,8 @@ const SEARCH_INDEX = [
 export default function SiteSearch({ open, onClose }) {
   const [query, setQuery] = useState('')
   const inputRef = useRef(null)
+  const dialogRef = useRef(null)
+  useFocusTrap(open, dialogRef)
 
   useEffect(() => {
     if (!open) {
@@ -82,6 +85,7 @@ export default function SiteSearch({ open, onClose }) {
             onClick={onClose}
           />
           <motion.div
+            ref={dialogRef}
             role="dialog"
             aria-modal="true"
             aria-label="Search the guide"
@@ -117,7 +121,7 @@ export default function SiteSearch({ open, onClose }) {
             </div>
             <ul className="max-h-72 overflow-y-auto py-2">
               {results.length === 0 ? (
-                <li className="px-4 py-6 text-sm text-center text-white opacity-50">No matches</li>
+                <li className="px-4 py-6 text-sm text-center text-muted-on-navy">No matches</li>
               ) : (
                 results.map((item) => (
                   <li key={`${item.section}-${item.tab || 'main'}-${item.title}`}>
