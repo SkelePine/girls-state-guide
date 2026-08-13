@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { siteConfig } from '../siteConfig'
 import LegalFooterLinks from '../components/LegalFooterLinks'
 
-export default function LegalLayout({ title, eyebrow, children }) {
+export default function LegalLayout({ title, eyebrow, children, showSiteBy = true }) {
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FAF7F2' }}>
       <a href="#main" className="skip-link">
@@ -48,7 +48,8 @@ export default function LegalLayout({ title, eyebrow, children }) {
             {title}
           </h1>
           <p className="text-sm text-muted-on-cream mb-10">
-            Last updated: August 13, 2026 · Site by {siteConfig.author}
+            Last updated: August 13, 2026
+            {showSiteBy ? ` · Site by ${siteConfig.author}` : ''}
           </p>
           <div className="legal-prose space-y-6 text-base leading-relaxed text-muted-on-cream">{children}</div>
         </article>

@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
   usePageMeta(pageMeta.privacy)
 
   return (
-    <LegalLayout title="Privacy Policy" eyebrow="Your Privacy">
+    <LegalLayout title="Privacy Policy" eyebrow="Your Privacy" showSiteBy={false}>
       <p>
         This Privacy Policy describes how the unofficial CA Girls State Guide (“we,” “the Site”), operated by{' '}
         {siteConfig.author}, handles information when you visit{' '}
@@ -26,10 +26,6 @@ export default function PrivacyPolicy() {
           <strong style={{ color: '#1B2A4A' }}>Alumni / story form:</strong> name (optional), email (required), your
           message (required), and whether you allow us to publish your story on the Site (required yes/no). We sanitize
           text before sending so HTML is not stored as executable content.
-        </li>
-        <li>
-          <strong style={{ color: '#1B2A4A' }}>Google Form (optional):</strong> if you open our linked Google Form,
-          Google collects whatever fields that form asks for under Google’s policies.
         </li>
         <li>
           <strong style={{ color: '#1B2A4A' }}>Essential browser storage:</strong> packing and “Before You Go” checklist
@@ -74,10 +70,6 @@ export default function PrivacyPolicy() {
           operate the guide. We do not publish your story unless you gave permission.
         </li>
         <li>
-          <strong style={{ color: '#1B2A4A' }}>Google Forms:</strong> if you use that link, Google and anyone with access
-          to that form’s response inbox can see those responses.
-        </li>
-        <li>
           <strong style={{ color: '#1B2A4A' }}>Vercel:</strong> may process access logs; they do not receive your story
           form body through this Site’s static hosting.
         </li>
@@ -95,7 +87,9 @@ export default function PrivacyPolicy() {
           <strong style={{ color: '#1B2A4A' }}>Formspree</strong> — processor for footer form submissions
         </li>
         <li>
-          <strong style={{ color: '#1B2A4A' }}>Google Forms</strong> — optional longer story questionnaire
+          <strong style={{ color: '#1B2A4A' }}>Google Forms</strong> — optional longer story questionnaire. If you open
+          our linked Google Form, Google collects whatever fields that form asks for under Google’s policies, and Google
+          and anyone with access to that form’s response inbox can see those responses.
         </li>
         <li>
           <strong style={{ color: '#1B2A4A' }}>Vercel</strong> — hosting provider that may process access logs
