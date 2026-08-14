@@ -35,7 +35,7 @@ const packingCategories = [
       'Light cardigan or blazer — lecture halls are cold',
       'Comfortable sneakers for evenings',
       'Undergarments + socks for each day + 1',
-      'Breathable fabrics — Riverside is 90°F+ in June',
+      'Breathable fabrics — California is hot in June',
     ],
   },
   {
