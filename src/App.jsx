@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import GuidePage from './pages/GuidePage'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieConsent />
+      <Analytics />
     </BrowserRouter>
   )
 }
