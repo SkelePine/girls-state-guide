@@ -20,7 +20,7 @@ export function hasAcceptedNonEssentialCookies() {
 
 /**
  * Call this before loading analytics/tracking scripts.
- * Currently the site does not ship analytics; gate future trackers here.
+ * OptionalAnalytics uses hasAcceptedNonEssentialCookies + the consent-changed event.
  */
 export function loadNonEssentialIfAllowed(loader) {
   if (hasAcceptedNonEssentialCookies() && typeof loader === 'function') {
@@ -84,8 +84,9 @@ export default function CookieConsent() {
             Cookie choices
           </p>
           <p id="cookie-consent-desc" className="text-sm leading-relaxed text-muted-on-navy">
-            We use essential browser storage so packing checklists and your cookie choice work. We do not load
-            advertising or analytics cookies unless you Accept non-essential cookies. You can change this anytime.{' '}
+            We use essential browser storage so packing checklists and your cookie choice work. Optional visitor
+            analytics (Vercel) load only if you Accept. We do not use advertising cookies. You can change this
+            anytime.{' '}
             <Link to="/cookies" style={{ color: '#C9A84C' }}>
               Cookie Policy
             </Link>

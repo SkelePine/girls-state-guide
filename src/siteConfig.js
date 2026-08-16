@@ -33,7 +33,7 @@ export const pageMeta = {
   privacy: {
     title: 'Privacy Policy — CA Girls State Guide',
     description:
-      'How this Girls State guide handles Formspree and Google Forms, Vercel logs, and checklist storage—and how to request deletion. We do not sell personal data.',
+      'How this Girls State guide handles Formspree, Google Forms, Vercel logs, optional analytics after you Accept, and checklist storage—and how to request deletion.',
   },
   terms: {
     title: 'Terms of Service — CA Girls State Guide',

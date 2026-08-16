@@ -36,6 +36,11 @@ export default function PrivacyPolicy() {
           <strong style={{ color: '#1B2A4A' }}>Hosting logs:</strong> our host (Vercel) may process standard server logs
           such as IP address, user agent, and request URLs to operate and secure the Site.
         </li>
+        <li>
+          <strong style={{ color: '#1B2A4A' }}>Optional analytics (only after Accept):</strong> Vercel Web Analytics
+          records anonymous page views — the page URL, referrer, approximate location (country/region), device type,
+          and browser. It does not use advertising cookies and is not tied to your name or email.
+        </li>
       </ul>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
@@ -44,7 +49,8 @@ export default function PrivacyPolicy() {
       <p>
         We use story submissions to read your experience, respond if needed, and — only if you answered “yes” to the
         publish permission question — consider featuring your words on the guide. Checklist storage exists only so your
-        progress persists on the same browser. Hosting logs keep the Site reliable and secure.
+        progress persists on the same browser. Hosting logs keep the Site reliable and secure. Optional analytics help
+        us understand how many people use the guide.
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
@@ -53,7 +59,9 @@ export default function PrivacyPolicy() {
       <p>
         Form submissions are kept for up to <strong style={{ color: '#1B2A4A' }}>24 months</strong>, or until you ask us
         to delete them, whichever comes first. After that we delete or anonymize them when no longer needed to operate
-        the guide. Checklist and cookie-choice data stay in your browser until you clear site data.
+        the guide. Checklist and cookie-choice data stay in your browser until you clear site data. Vercel’s visitor
+        session identifier for analytics is discarded after 24 hours; aggregated visit counts may remain in the
+        dashboard.
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
@@ -70,8 +78,9 @@ export default function PrivacyPolicy() {
           operate the guide. We do not publish your story unless you gave permission.
         </li>
         <li>
-          <strong style={{ color: '#1B2A4A' }}>Vercel:</strong> may process access logs; they do not receive your story
-          form body through this Site’s static hosting.
+          <strong style={{ color: '#1B2A4A' }}>Vercel:</strong> may process access logs, and — only if you Accepted
+          non-essential cookies — anonymous Web Analytics page views. They do not receive your story form body through
+          this Site’s static hosting.
         </li>
         <li>
           Checklist and consent data stay in <strong style={{ color: '#1B2A4A' }}>your browser</strong> unless you clear
@@ -92,7 +101,8 @@ export default function PrivacyPolicy() {
           and anyone with access to that form’s response inbox can see those responses.
         </li>
         <li>
-          <strong style={{ color: '#1B2A4A' }}>Vercel</strong> — hosting provider that may process access logs
+          <strong style={{ color: '#1B2A4A' }}>Vercel</strong> — hosting provider that may process access logs, and
+          optional Web Analytics after you Accept
         </li>
         <li>
           <strong style={{ color: '#1B2A4A' }}>Fonts:</strong> Inter and Playfair Display are self-hosted with this Site
@@ -106,7 +116,7 @@ export default function PrivacyPolicy() {
       <p>
         We do <strong style={{ color: '#1B2A4A' }}>not</strong> sell personal data. We do{' '}
         <strong style={{ color: '#1B2A4A' }}>not</strong> use advertising cookies or third-party ad trackers. Optional
-        analytics would load only after you Accept non-essential cookies (none are loaded today). See our{' '}
+        Vercel Web Analytics loads only after you Accept non-essential cookies, and never if you Decline. See our{' '}
         <Link to="/cookies" className="text-gold-on-cream">
           Cookie Policy
         </Link>
@@ -136,7 +146,8 @@ export default function PrivacyPolicy() {
       <p>
         If European data-protection law applies to you, you may have rights to access, rectify, erase, restrict, or
         object to certain processing, and to data portability, where applicable. Our lawful bases for the story form are
-        your consent (you choose to submit) and our legitimate interest in operating an educational guide. You may
+        your consent (you choose to submit) and our legitimate interest in operating an educational guide. Optional
+        analytics, if you Accept, is based on your consent — you can withdraw it anytime via Cookie choices. You may
         withdraw consent for future publishing by contacting us. You may lodge a complaint with your local supervisory
         authority. Contact us using the details above to exercise rights.
       </p>

@@ -48,7 +48,7 @@ export default function LegalLayout({ title, eyebrow, children, showSiteBy = tru
             {title}
           </h1>
           <p className="text-sm text-muted-on-cream mb-10">
-            Last updated: August 13, 2026
+            Last updated: August 15, 2026
             {showSiteBy ? ` · Site by ${siteConfig.author}` : ''}
           </p>
           <div className="legal-prose space-y-6 text-base leading-relaxed text-muted-on-cream">{children}</div>

@@ -5,6 +5,7 @@ import TermsOfService from './pages/TermsOfService'
 import CookiePolicy from './pages/CookiePolicy'
 import NotFound from './pages/NotFound'
 import CookieConsent from './components/CookieConsent'
+import OptionalAnalytics from './components/OptionalAnalytics'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieConsent />
+      <OptionalAnalytics />
     </BrowserRouter>
   )
 }

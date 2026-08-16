@@ -19,9 +19,9 @@ export default function CookiePolicy() {
       </h2>
       <p>
         We use <strong style={{ color: '#1B2A4A' }}>essential</strong> browser storage so packing checklists and your
-        cookie choice keep working. We do <strong style={{ color: '#1B2A4A' }}>not</strong> load advertising or analytics
-        cookies unless you click <strong style={{ color: '#1B2A4A' }}>Accept</strong> on the cookie banner. Nothing is
-        pre-checked. You can Decline non-essential cookies and still use the guide.
+        cookie choice keep working. Optional visitor analytics load only if you click{' '}
+        <strong style={{ color: '#1B2A4A' }}>Accept</strong> on the cookie banner. Nothing is pre-checked. You can
+        Decline non-essential cookies and still use the guide. We do not use advertising cookies.
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
@@ -48,9 +48,11 @@ export default function CookiePolicy() {
         Non-essential cookies
       </h2>
       <p>
-        Today the Site does <strong style={{ color: '#1B2A4A' }}>not ship</strong> advertising, marketing, or analytics
-        cookies. If we add optional analytics later, those scripts will load <strong style={{ color: '#1B2A4A' }}>only</strong>{' '}
-        after you Accept, and never if you Decline. Declining does not block the guide, checklists, or story form.
+        We do <strong style={{ color: '#1B2A4A' }}>not</strong> use advertising or marketing cookies. If you Accept,
+        we load <strong style={{ color: '#1B2A4A' }}>Vercel Web Analytics</strong> so we can see how many people visit
+        the guide and which pages they open. That script does not set advertising cookies. It loads{' '}
+        <strong style={{ color: '#1B2A4A' }}>only</strong> after you Accept, and never if you Decline. Declining does
+        not block the guide, checklists, or story form.
       </p>
 
       <h2 style={{ color: '#1B2A4A', fontFamily: '"Playfair Display", serif' }} className="text-xl font-bold pt-2">
