@@ -226,8 +226,6 @@ export default function ForParents() {
             <StaggerContainer className="space-y-3">
               {[
                 'Help her research the positions she wants to run for',
-                'Practice her speech with her at home — be her audience',
-                'Help her make her campaign poster (Canva is free and easy)',
                 'Make sure her bill is submitted before the deadline',
                 "If she's eligible for the Samsung Scholarship, help her gather military service documentation early",
                 "Remind her: she was selected because she's ready for this",
