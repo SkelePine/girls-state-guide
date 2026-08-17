@@ -7,7 +7,7 @@ import { useFocusTrap } from '../hooks/useFocusTrap'
 const SEARCH_INDEX = [
   { title: 'How to Apply', section: 'apply', tab: 'apply', keywords: 'eligibility ala unit samsung scholarship alternate' },
   { title: 'Before You Go checklist', section: 'apply', tab: 'before', keywords: 'bill deadline packing bank mykidsbank departure' },
-  { title: 'What Is Girls State', section: 'what', tab: 'is', keywords: 'ala mission campus riverside' },
+  { title: 'What Is Girls State', section: 'what', tab: 'is', keywords: 'ala mission campus southern california' },
   { title: 'What It Is NOT', section: 'what', tab: 'not', keywords: 'myth camp debate partisan' },
   { title: 'The 51st State', section: 'what', tab: '51st', keywords: 'cities counties parties simulation' },
   { title: 'How It Works', section: 'structure', keywords: 'city county state nationalist federalist' },

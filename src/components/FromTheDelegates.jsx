@@ -63,7 +63,7 @@ export default function FromTheDelegates() {
                     2026 Nationalist Party Keynote Address
                   </p>
                   <p className="text-muted-on-navy text-sm">
-                    Delivered at ALA California Girls State, 83rd Session · UC Riverside
+                    Delivered at ALA California Girls State, 83rd Session · Southern California
                   </p>
                 </div>
                 <div style={{ backgroundColor: 'white' }} className="p-8">

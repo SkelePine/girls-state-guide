@@ -23,7 +23,7 @@ const cards = [
   {
     icon: '📍',
     title: 'Where & When',
-    text: 'Held every June for one week. The 2026 session (83rd) was held June 22–27 at the University of California, Riverside (UCR) campus. Location may vary by year — confirm with your ALA unit.',
+    text: 'Held every June for one week. The 2026 session (83rd) was held June 22–27 in Southern California. Campus location can change by year — confirm dates, campus, and logistics with your ALA unit.',
   },
   {
     icon: '⚖️',

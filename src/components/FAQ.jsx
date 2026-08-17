@@ -24,7 +24,7 @@ export default function FAQ() {
     },
     {
       q: 'What if I have dietary restrictions?',
-      a: 'Contact your ALA unit and the program organizers BEFORE the session begins. Don\'t wait until you arrive. The dining commons at UCR has multiple food venues, but it\'s important to communicate your needs in advance.',
+      a: 'Contact your ALA unit and the program organizers BEFORE the session begins. Don\'t wait until you arrive — communicate dietary needs and allergies in advance.',
     },
     {
       q: 'Is it expensive?',
@@ -48,7 +48,7 @@ export default function FAQ() {
     },
     {
       q: 'Where was Girls State held in 2026?',
-      a: 'UC Riverside campus, Riverside, CA — June 22–27, 2026 (83rd session). Location may vary by year — always confirm with your ALA unit.',
+      a: 'Southern California — June 22–27, 2026 (83rd session). Campus location can change by year — always confirm dates and location with your ALA unit.',
     },
     {
       q: 'When is my bill due?',

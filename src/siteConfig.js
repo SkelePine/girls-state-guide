@@ -10,7 +10,7 @@ export const siteConfig = {
   byline: 'Built by Inaaya Saif, 2026 Delegate — for every delegate who comes after.',
   verifiedYear: 2026,
   sessionLabel: '83rd Session',
-  campus2026: 'University of California, Riverside (UCR)',
+  campus2026: 'a Southern California campus',
   siteUrl: import.meta.env.VITE_SITE_URL || 'https://www.girlsstateultimateguide.com',
   /** Public contact for privacy/deletion requests — override with VITE_CONTACT_EMAIL */
   contactEmail:

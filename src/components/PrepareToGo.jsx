@@ -121,7 +121,7 @@ const dormTips = [
   { title: 'Lights Out', desc: '10:30 PM lights out is enforced. Take it seriously. Days start at 6:00 AM — you need the sleep.' },
   { title: 'Your Phone', desc: 'Phones are allowed in the dorms but restricted during sessions. Don\'t be alarmed if you can\'t reach your daughter immediately.' },
   { title: 'Posters', desc: 'Campaign posters may ONLY be hung inside residence halls using blue tape. No other tape. No hanging outside.' },
-  { title: 'The Heat', desc: 'Riverside in late June hits 90°F+. Pack breathable fabrics and sunscreen. Lecture halls are air-conditioned — bring a layer.' },
+  { title: 'The Heat', desc: 'California is hot in June. Pack breathable fabrics and sunscreen. Lecture halls are air-conditioned — bring a layer.' },
 ]
 
 const speechRows = [
@@ -446,13 +446,10 @@ export default function PrepareToGo() {
                   2026 Campus
                 </p>
                 <p style={{ color: '#1B2A4A' }} className="text-xl font-bold mb-1">
-                  University of California, Riverside (UCR)
+                  Southern California
                 </p>
                 <p style={{ color: '#2D2D2D', opacity: 0.65 }} className="text-sm">
-                  900 University Ave, Riverside, CA 92521
-                </p>
-                <p style={{ color: '#2D2D2D', opacity: 0.45 }} className="text-xs mt-2">
-                  Note: Campus location may vary by year — confirm with your ALA unit
+                  Exact campus can change by year — confirm the official location, housing, and logistics with your ALA unit
                 </p>
               </div>
 
@@ -498,9 +495,8 @@ export default function PrepareToGo() {
                     Dining
                   </h3>
                   <p className="text-white opacity-70 text-sm leading-relaxed mb-4">
-                    All meals are provided in the campus dining hall. At UCR, the main facility is the{' '}
-                    <strong className="text-white">Glasgow Dining Commons</strong> — an 800+ seat
-                    all-you-can-eat facility with six food venues.
+                    All meals are provided in the campus dining hall. Confirm dining details and any dietary needs with your
+                    ALA unit before the session begins.
                   </p>
                   <p className="text-white opacity-70 text-sm leading-relaxed mb-6">
                     Days run from 6:00 AM to 10:30 PM. Eat breakfast. You need the fuel.

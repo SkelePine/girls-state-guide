@@ -304,7 +304,7 @@ export default function WhatsNext() {
                   <p className="text-white font-medium mb-4">ALA California Girls State Delegate</p>
                   <p className="text-muted-on-navy text-xs uppercase tracking-widest mb-2">Description</p>
                   <p className="text-white opacity-75 text-sm leading-relaxed">
-                    One of 450 delegates selected from 556,000 CA high school juniors (one per high school) for week-long civic leadership program at UC Riverside; simulated state government, ran for multiple offices, wrote and debated legislation.
+                    One of 450 delegates selected from 556,000 CA high school juniors (one per high school) for week-long civic leadership program in Southern California; simulated state government, ran for multiple offices, wrote and debated legislation.
                   </p>
                   <p className="text-muted-on-navy text-xs mt-3 italic">
                     Add your specific roles: Nationalist Party Keynote Speaker, City Commissioner, District Attorney candidate, etc.

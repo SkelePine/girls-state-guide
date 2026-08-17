@@ -7,7 +7,7 @@ import { useState } from 'react'
 const DEFAULTS = {
   campus: {
     src: '/images/campus.jpg',
-    alt: 'Sunlit UC Riverside campus lawn and buildings during California Girls State',
+    alt: 'Sunlit campus lawn and buildings during California Girls State',
     caption: 'Campus life · 2026 Session',
     // Prefer showing the building/lawn, not empty sky or extreme edges
     position: 'center center',

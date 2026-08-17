@@ -14,7 +14,7 @@ const parentSections = [
     icon: '📍',
     title: 'Where Will She Be?',
     content:
-      'The 2026 session was held at the University of California, Riverside (UCR) campus, 900 University Ave, Riverside, CA 92521. She will live in the campus residence halls, eat in the dining commons, and spend the week in sessions, meetings, and assemblies. Note: Campus location may vary by year — confirm with your ALA unit.',
+      'The 2026 session was held in Southern California. She will live in campus residence halls, eat in the dining commons, and spend the week in sessions, meetings, and assemblies. Campus location can change by year — get the official address, housing, and logistics from your ALA unit.',
   },
   {
     icon: '🚌',
@@ -38,7 +38,7 @@ const parentSections = [
     icon: '🍽️',
     title: 'What About Food?',
     content:
-      'All meals are provided in the campus dining hall. At UCR, the main facility is the Glasgow Dining Commons — an 800+ seat all-you-can-eat facility with six food venues. If your daughter has dietary restrictions or allergies, contact your ALA unit and the program organizers BEFORE the session begins.',
+      'All meals are provided in the campus dining hall. If your daughter has dietary restrictions or allergies, contact your ALA unit and the program organizers BEFORE the session begins — don\'t wait until she arrives.',
   },
   {
     icon: '💊',
@@ -70,7 +70,7 @@ const packingHighlights = [
   { item: 'Business casual clothing for daytime sessions', note: 'Dress pants, blouses, skirts — no jeans during sessions' },
   { item: 'Comfortable shoes', note: 'She will walk a lot — no stilettos' },
   { item: 'Layers for air-conditioned rooms', note: 'Lecture halls are cold even when it\'s 90°F outside' },
-  { item: 'Sunscreen and reusable water bottle', note: 'Riverside in June is 90°F+' },
+  { item: 'Sunscreen and reusable water bottle', note: 'California is hot in June' },
   { item: 'Bedding (twin XL)', note: 'Confirm with your unit if linens are provided' },
   { item: 'Shower caddy and shower shoes', note: 'Communal bathrooms' },
   { item: 'Cash $20–40', note: 'For incidentals' },
